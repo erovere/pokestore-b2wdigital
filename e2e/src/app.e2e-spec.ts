@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('pokestore-b2w app is running!');
+    expect(page.getTitleText()).toEqual('pokestore-b2wdigital app is running!');
   });
 
   afterEach(async () => {

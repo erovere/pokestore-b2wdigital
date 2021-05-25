@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'pokestore-b2w'`, () => {
+  it(`should have as title 'pokestore-b2wdigital'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('pokestore-b2w');
+    expect(app.title).toEqual('pokestore-b2wdigital');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('pokestore-b2w app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('pokestore-b2wdigital app is running!');
   });
 });
