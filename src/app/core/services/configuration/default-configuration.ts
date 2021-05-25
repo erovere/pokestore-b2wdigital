@@ -8,7 +8,7 @@ export default {
         'tertiary-color'  : '#fddfdf',
         'text-color'      : '#696969',
         'background-color': '#f5f5f5',
-        //          'pokeball-color': '#b71c1c'
+        // 'pokeball-color': '#b71c1c'
     },
     logoImageUrl: './assets/logos/pokestore.png',
     features: ['details', 'cashback', 'searchbar'],

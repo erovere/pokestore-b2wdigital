@@ -57,8 +57,10 @@ export class ConfigurationService {
             .pipe(catchError((err) => of(defaultConfig)))
             .pipe(
                 tap((data) => {
+                    console.log('Tenant data (geral): ', data);
                     const TENANT_DATA = data[this.tenantId];
-                    console.log("Valor do tenant encontrado: ", TENANT_DATA);
+                    console.log('Tenant data do cliente atual: ', TENANT_DATA);
+                    
                     this.inMemory.saveConfiguration(TENANT_DATA);
                     if (isCacheEnabled) {
                         this.cache.saveConfiguration(TENANT_DATA);

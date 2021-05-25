@@ -2,7 +2,7 @@
     "hosting": [        
         {
             "target": "fire",
-            "public": "dist",
+            "public": "dist/pokestore-b2wdigital",
             "ignore": [
                 "firebase.json",
                 "**/.*",
@@ -17,7 +17,7 @@
         },
         {
             "target": "water",
-            "public": "dist",
+            "public": "dist/pokestore-b2wdigital",
             "ignore": [
                 "firebase.json",
                 "**/.*",
@@ -32,7 +32,7 @@
         },
         {
             "target": "grass",
-            "public": "dist",
+            "public": "dist/pokestore-b2wdigital",
             "ignore": [
                 "firebase.json",
                 "**/.*",
@@ -47,7 +47,7 @@
         },
         {
             "target": "ghost",
-            "public": "dist",
+            "public": "dist/pokestore-b2wdigital",
             "ignore": [
                 "firebase.json",
                 "**/.*",
@@ -62,7 +62,7 @@
         },
         {
             "target": "ice",
-            "public": "dist",
+            "public": "dist/pokestore-b2wdigital",
             "ignore": [
                 "firebase.json",
                 "**/.*",

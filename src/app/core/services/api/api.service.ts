@@ -18,7 +18,7 @@ export class ApiService {
     getUserCache(): User {
         return JSON.parse(window.localStorage.getItem('pokestore_user')) as User;
     }
-    
+
     removeUserCache(): void {
         window.localStorage.removeItem('pokestore_user');
     }
@@ -29,21 +29,5 @@ export class ApiService {
 
     get(path: string, options: object = {}): Observable<any> {
         return this.http.get(`${environment.API_URL}${path}`, options);
-    }
-
-    put(path: string, body: object = {}, options: object = {}): Observable<any> {
-        return this.http.put(`${environment.API_URL}${path}`, body, options);
-    }
-
-    post(path: string, body: object = {}, options: object = {}): Observable<any> {
-        return this.http.post(`${environment.API_URL}${path}`, body, options);
-    }
-
-    patch(path: string, body: object = {}, options: object = {}): Observable<any> {
-        return this.http.patch(`${environment.API_URL}${path}`, body, options);
-    }
-
-    delete(path: string, options: object = {}): Observable<any> {
-        return this.http.delete(`${environment.API_URL}${path}`, options);
     }
 }

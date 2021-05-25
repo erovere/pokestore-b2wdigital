@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   API_URL: 'http://localhost:3000',
-  TENANTS_API_URL: 'http://localhost:3000'
+  // TENANTS_API_URL: 'http://localhost:3000'
+  TENANTS_API_URL: 'https://my-json-server.typicode.com/erovere/poketenantconfig'
 };
 
 /*
