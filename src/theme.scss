@@ -1,0 +1,96 @@
+// theme.scss
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap");
+
+// mat-typography-level(size, line-height, font-weight)
+$pokestore-typography: mat-typography-config(
+    $font-family: "Roboto, Heebo, sans-serif",
+);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core($pokestore-typography);
+
+// Typography Colors
+$pokestore-dark-text: #333;
+$pokestore-light-text: #ffffff;
+
+// Primary Color Palette
+$pokestore-primary: (
+    main: var(--primary-color),
+    lighter: var(--primary-color),
+    darker: var(--primary-color),
+    200: var(--primary-color),
+    contrast: (
+        main: $pokestore-light-text,
+        lighter: $pokestore-light-text,
+        darker: $pokestore-light-text,
+        200: $pokestore-light-text,
+    ),
+);
+
+// Secondary Color Palette
+$pokestore-accent: (
+    main: var(--accent-color),
+    lighter: var(--accent-color),
+    darker: var(--accent-color),
+    200: var(--accent-color),
+    contrast: (
+        main: $pokestore-light-text,
+        lighter: $pokestore-light-text,
+        darker: $pokestore-light-text,
+        200: $pokestore-light-text,
+    ),
+);
+
+$pokestore-warn: (
+    main: #ff3535,
+    lighter: #ffc2c2,
+    darker: #ff2222,
+    200: #ff3535,
+    contrast: (
+        main: $pokestore-light-text,
+        lighter: $pokestore-dark-text,
+        darker: $pokestore-light-text,
+    ),
+);
+
+// Alert Color Palette
+$alert-success: #00bf85;
+$alert-warning: #ffc136;
+$alert-information: #2175d6;
+$alert-error: #ff3535;
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$theming-material-components-primary: mat-palette(
+    $pokestore-primary,
+    main,
+    lighter,
+    darker
+);
+$theming-material-components-accent: mat-palette(
+    $pokestore-accent,
+    main,
+    lighter,
+    darker
+);
+
+// The warn palette is optional (defaults to red).
+$theming-material-components-warn: mat-palette(
+    $pokestore-warn,
+    main,
+    lighter,
+    darker
+);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$theming-material-components-theme: mat-light-theme(
+    $theming-material-components-primary,
+    $theming-material-components-accent,
+    $theming-material-components-warn
+);

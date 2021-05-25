@@ -33,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Armazenamento de cookies para guardar os temas das lojas, para otimizar carregamento da aplicação e diminuir consumo de memória da aplicação.
 * CI/CD totalmente configurado e automatizado com Github e Firebase integrados. Quando um Pull Request bate na branch master, automaticamente publica no firebase e espelha em todas lojas simultaneamente.
 * Site principal com espelhamento automático em outros tenants (fire, water, grass, ghost e ice) a partir da mesma aplicação.
-
+* SEO e otimizações para compartilhamento em redes sociais.
 
 ## Backlog do projeto: ##
 * Modal de cashback AME após realizar uma compra de Pokemon;
@@ -41,7 +41,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Carrinho de compras que aparece apenas após adicionar itens, na lateral direita;
 * Carrinho com notificação no mobile (icone de carrinho apenas e ele escondido para economizar viewport);
 * Modal de cookie consent, aplicando as regras da LGPD.
-
+* Layout de Black Friday
+* Modelagem de README com detalhamento da arquitetura white label.
 
 ## Verificar: ##
 PWA

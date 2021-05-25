@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:3000'
+  API_URL: 'http://localhost:3000',
+  TENANTS_API_URL: 'http://localhost:3000'
 };
 
 /*
