@@ -1,0 +1,26 @@
+{
+  "projects": {
+    "default": "pokestore-b2wdigital"
+  },
+  "targets": {
+    "pokestore-b2wdigital": {
+      "hosting": {
+        "fire": [
+          "fire-pokestore"
+        ],
+        "water": [
+          "water-pokestore"
+        ],
+        "grass": [
+          "grass-pokestore"
+        ],
+        "ghost": [
+          "ghost-pokestore"
+        ],
+        "ice": [
+          "ice-pokestore"
+        ]
+      }
+    }
+  }
+}

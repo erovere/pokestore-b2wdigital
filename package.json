@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server": "json-server --watch server/db.json",
-    "test:ci": "ng test --watch=false --code-coverage --browsers=ChromeHeadless"
+    "test:ci": "ng test --watch=false --code-coverage --browsers=ChromeHeadless",
+    "build-prod": "ng build --configuration=production --build-optimizer --output-path dist"
   },
   "private": true,
   "dependencies": {
