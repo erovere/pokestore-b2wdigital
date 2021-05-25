@@ -42,7 +42,6 @@ export class AppComponent implements OnInit {
 
     private whoami(): void {
         const url = new URL(window.location.href);
-        this.tenantId = hostTenantMap[url.host] || 'fire';
-        console.log("Tenant id on whoami(): ", this.tenantId);
+        this.tenantId = hostTenantMap[url.host];
     }
 }
