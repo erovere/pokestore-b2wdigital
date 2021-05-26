@@ -1,3 +1,7 @@
+@import '../../../scss/config/variables';
+@import '../../../scss/mixins/all';
+
+
 .store-main-content{
     display: flex;
     justify-content: flex-start;
@@ -162,4 +166,14 @@ aside.cart{
 .btn-show-more-records{
     width: 300px;
     margin: 0 auto;
+}
+
+@include for-tablet-landscape-down{
+    section.store{
+        .product-container{
+            .product-card{
+                width: 270px;
+            }
+        }
+    }
 }
