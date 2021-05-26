@@ -1,4 +1,4 @@
-.home-main-content{
+.store-main-content{
     display: flex;
     justify-content: flex-start;
     position: relative;
@@ -94,7 +94,20 @@ section.store{
                     font-size: 1.3rem;
                     color: #373736;
                     font-weight: bold;
-                    font-family: 'Roboto';
+                    padding: 8px 0;
+                }
+                p{
+                    .pokecoin{
+                        width: 24px;
+                        margin-right: 4px;
+                        height: 24px;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    span{
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
                 }
             }
             .product-actions{

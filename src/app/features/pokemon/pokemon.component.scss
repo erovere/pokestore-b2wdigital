@@ -53,6 +53,19 @@ section.pokemon-details{
                     img{
                         display: block;
                     }
+                    p{
+                        .pokecoin{
+                            width: 24px;
+                            margin-right: 4px;
+                            height: 24px;
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                        span{
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
                 }
             }
         }

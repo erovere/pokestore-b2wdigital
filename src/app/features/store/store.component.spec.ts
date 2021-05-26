@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HomeComponent } from './home.component';
+import { StoreComponent } from './store.component';
 import { NavComponent } from '../../core/layout/nav/nav.component';
 
-describe('HomeComponent', () => {
-    let component: HomeComponent;
-    let fixture: ComponentFixture<HomeComponent>;
+describe('StoreComponent', () => {
+    let component: StoreComponent;
+    let fixture: ComponentFixture<StoreComponent>;
     let template: HTMLElement;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [HomeComponent, NavComponent],
+            declarations: [StoreComponent, NavComponent],
         });
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(HomeComponent);
+        fixture = TestBed.createComponent(StoreComponent);
         component = fixture.componentInstance;
         template = fixture.nativeElement;
     });

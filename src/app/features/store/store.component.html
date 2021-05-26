@@ -1,4 +1,4 @@
-<div class="home-main-content" [class]="isCartEmpty ? '' : 'cart-with-items'">
+<div class="store-main-content" [class]="isCartEmpty ? '' : 'cart-with-items'">
     <section class="store">
         <div class="content-wrapper">
             <div class="searchbar" *ngIf="isFeatureEnabled('searchbar')">
@@ -11,7 +11,7 @@
                     </div>
                     <div class="product-info">
                         <strong>{{pokemon.pokemon.name | titlecase }}</strong>
-                        <p>Preço: {{getPokemonIdFromURL(pokemon.pokemon.url)}}</p>
+                        <p><img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda"> {{getPokemonIdFromURL(pokemon.pokemon.url)}} <span>Poke moedas</span></p>
                     </div>
                     <div class="product-actions">
                         <button type="button" class="btn btn--primary" (click)="addToCart(getPokemonIdFromURL(pokemon.pokemon.url))">Adicionar ao carrinho</button>

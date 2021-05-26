@@ -4,13 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'home',
-    },
-    {
-        path: 'home',
         loadChildren: () =>
-            import('./features/home/home.module').then((m) => m.HomeModule)
+            import('./features/store/store.module').then((m) => m.StoreModule)
     },
     {
         path: 'pokemon/details/:id',

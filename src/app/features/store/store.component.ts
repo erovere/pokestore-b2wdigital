@@ -3,11 +3,11 @@ import { ApiService, ConfigurationService } from '@app/core/services';
 import { first } from 'rxjs/operators';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss'],
+    selector: 'app-store',
+    templateUrl: './store.component.html',
+    styleUrls: ['./store.component.scss'],
 })
-export class HomeComponent implements OnInit{
+export class StoreComponent implements OnInit{
     public features: string[];
     public pokemonList;
     public selectedPokemonType;
