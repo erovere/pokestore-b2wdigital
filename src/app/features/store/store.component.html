@@ -1,10 +1,12 @@
-<div class="store-main-content" [class]="isCartEmpty ? '' : 'cart-with-items'">
+<div class="store-main-content" [class]="isCartEmpty ? '' : 'cart-with-items'" #store>
     <section class="store">
         <div class="content-wrapper">
             <div class="searchbar" *ngIf="isFeatureEnabled('searchbar')">
-                <input type="text" placeholder="Buscar Pokemon...">
+                <form [formGroup]="search">
+                    <input type="text" formControlName="search" placeholder="Buscar Pokemon..."  (ngModelChange)="filterUpdated($event)">
+                </form>
             </div>
-            <div class="product-container" *ngIf="pokemonListFiltered; else loadingPokemons">
+            <div class="product-container" *ngIf="pokemonList; else loadingPokemons">
                 <div class="product-card" *ngFor="let pokemon of pokemonListFiltered; let i = index">
                     <div class="product-image" [routerLink]="['/pokemon/details/', getPokemonIdFromURL(pokemon.pokemon.url)]">
                         <img loading="lazy" [src]='"https://pokeres.bastionbot.org/images/pokemon/" + getPokemonIdFromURL(pokemon.pokemon.url) + ".png"' alt="Imagem do pokemon {{pokemon.pokemon.name}}">
@@ -14,12 +16,12 @@
                         <p><img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda"> {{getPokemonIdFromURL(pokemon.pokemon.url)}} <span>Poke moedas</span></p>
                     </div>
                     <div class="product-actions">
-                        <button type="button" class="btn btn--primary" (click)="addToCart(getPokemonIdFromURL(pokemon.pokemon.url))">Adicionar ao carrinho</button>
+                        <button type="button" class="btn btn--primary" (click)="addToCart(getPokemonIdFromURL(pokemon.pokemon.url)); scroll(store)">Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>
-            <button *ngIf="(pokemonListFiltered) && (maxRecordsToShow > recordsRendered)" type="button" class="btn btn--primary btn-show-more-records" (click)="mountPokemonsToStore(12)">Mostrar mais</button>
-
+            <button *ngIf="(pokemonListFiltered.length > 0) && (maxRecordsToShow > recordsRendered) && (filterParameter.length === 0)" type="button" class="btn btn--primary btn-show-more-records" (click)="mountPokemonsToStore(12)">Mostrar mais</button>
+            
             <ng-template #loadingPokemons>
                 <div class="loading-grid">
                     <div>
@@ -192,10 +194,13 @@
                     </div>
                 </div>
             </ng-template>
+            <div class="search-not-found" *ngIf="(pokemonListFiltered.length === 0)">
+                <p>Nenhum pokemon encontrado com este termo de busca :(</p>
+            </div>
         </div>    
     </section>
     
-    <aside class="cart">
+    <aside class="cart" #cart>
         <h2>Carrinho:</h2>
         
     </aside>    

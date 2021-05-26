@@ -31,7 +31,8 @@ export class PokemonComponent implements OnInit {
 
     public loadPokemonDataByID(): void {
         this.pokemonIdsub = this.route.params.subscribe((params) => {
-            this.pokemonId = params['id'];
+            const keyId = 'id';
+            this.pokemonId = params[keyId];
         });
         if (this.pokemonId) {
             this.api.get('pokemon/' + this.pokemonId)
@@ -63,6 +64,7 @@ export class PokemonComponent implements OnInit {
     }
 
     get getPokemonSprites(): any {
-        return this.pokemonDetails.sprites['front_default'];
+        const key = 'front_default';
+        return this.pokemonDetails.sprites[key];
     }
 }

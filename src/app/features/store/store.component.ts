@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService, ConfigurationService } from '@app/core/services';
-import { first } from 'rxjs/operators';
+import { filter, first, timeout } from 'rxjs/operators';
 
 @Component({
     selector: 'app-store',
@@ -8,19 +9,21 @@ import { first } from 'rxjs/operators';
     styleUrls: ['./store.component.scss'],
 })
 export class StoreComponent implements OnInit{
+    public search: FormGroup;
     public features: string[];
     public pokemonList;
     public selectedPokemonType;
-    public pokemonListFiltered;
+    public pokemonListFiltered = [];
     public maxRecordsToShow;
     public recordsRendered;
     public QTD_POKEMONS_TO_SHOW = 21;
-
     public isCartEmpty = true;
+    public filterParameter = '';
 
     constructor(
         private configurationService: ConfigurationService,
-        private api: ApiService
+        private api: ApiService,
+        private fb: FormBuilder
     ) { }
 
     ngOnInit(): void {
@@ -29,6 +32,9 @@ export class StoreComponent implements OnInit{
             this.selectedPokemonType = appConfig.name;
             this.features = appConfig.features;
         }
+        this.search = this.fb.group({
+            search: ['']
+        });
         this.fetchPokemonsByType();
     }
 
@@ -52,12 +58,12 @@ export class StoreComponent implements OnInit{
     private mountPokemonsToStore(showMoreRecords: number): any {
         if (this.recordsRendered == null) {
             this.pokemonListFiltered = this.pokemonList.slice(0, (this.QTD_POKEMONS_TO_SHOW + showMoreRecords)).filter(pokemon => {
-                return pokemon.pokemon.name.indexOf('') >= 0;
+                return pokemon.pokemon.name.indexOf(this.filterParameter) >= 0;
             });
             this.recordsRendered = (this.QTD_POKEMONS_TO_SHOW + showMoreRecords);
         } else {
             this.pokemonListFiltered = this.pokemonList.slice(0, (this.recordsRendered + showMoreRecords)).filter(pokemon => {
-                return pokemon.pokemon.name.indexOf('') >= 0;
+                return pokemon.pokemon.name.indexOf(this.filterParameter) >= 0;
             });
             this.recordsRendered = (this.recordsRendered + showMoreRecords);
         }
@@ -76,4 +82,18 @@ export class StoreComponent implements OnInit{
         this.isCartEmpty = false;
         console.log('pokemon id selected: ', pokemonId);
     }
- }
+
+    public scroll(el: HTMLElement): void {
+        setTimeout(() => {
+            el.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }, 100);
+    }
+
+    public filterUpdated(event): void{
+        const searchParameter = event.toString();
+        if (searchParameter.length === 0 || searchParameter.length > 1 ) {
+            this.filterParameter = searchParameter;
+            this.mountPokemonsToStore(0);
+        }
+    }
+}

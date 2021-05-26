@@ -34,6 +34,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * CI/CD totalmente configurado e automatizado com Github e Firebase integrados. Quando um Pull Request bate na branch master, automaticamente publica no firebase e espelha em todas lojas simultaneamente.
 * Site principal com espelhamento automático em outros tenants (fire, water, grass, ghost e ice) a partir da mesma aplicação.
 * SEO e otimizações para compartilhamento em redes sociais.
+* Busca de pokemons a partir de 2 caracteres, para evitar consumo excessivo de memória da aplicação.
+* Código passando em ng lint.
 
 ## Backlog do projeto: ##
 * Modal de cashback AME após realizar uma compra de Pokemon;

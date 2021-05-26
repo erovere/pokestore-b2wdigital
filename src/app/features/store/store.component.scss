@@ -9,8 +9,7 @@
     max-width: 1140px;
     margin: 0 auto;
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 30px 20px;
 }
 
 section.store{
@@ -158,7 +157,7 @@ aside.cart{
     justify-items: center;
     width: 100%;
     margin: 2.5rem 0;
-    max-width: 800px;
+    max-width: 100%;
     > div {
         width: 100%;
     }
@@ -169,6 +168,9 @@ aside.cart{
 }
 
 @include for-tablet-landscape-down{
+    .store-main-content{
+        padding: 30px;
+    }
     section.store{
         .product-container{
             .product-card{

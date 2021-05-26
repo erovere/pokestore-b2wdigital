@@ -172,6 +172,10 @@ header.main-header {
         .content-wrapper{
             padding: 0 10px;
         }
+        .logo{
+            flex: inherit;
+            margin: 0 auto;
+        }
         nav{
             display: none;
         }
