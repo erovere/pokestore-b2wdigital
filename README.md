@@ -50,5 +50,4 @@ Lighthouse
 
 
 **JSON SERVER**
-https://jsonkeeper.com/b/3DV8
-
+https://my-json-server.typicode.com/erovere/poketenantconfig

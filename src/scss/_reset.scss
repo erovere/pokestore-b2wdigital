@@ -1,0 +1,424 @@
+@import "config/variables";
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  font-size: 100%;
+  font-family: $font-family;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p{
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+* {
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+  }
+}
+
+a, button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+// MATERIAL STYLES RESET
+.mat-dialog-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+.terms-dialog {
+
+  @include for-phone-only {
+    max-width: 100%!important;
+  }
+  @include for-tablet-portrait-up {
+    margin: 35px 20px !important;
+    max-width: 1000px !important;
+  }
+}
+.cdk-global-overlay-wrapper {
+  @include for-tablet-portrait-up {
+    justify-content: center!important;
+  }
+  .cdk-overlay-pane {
+    max-width: 100vw!important;
+  }
+}
+
+.cdk-global-scrollblock {
+  overflow-y: auto;
+}
+
+
+// img,
+// legend {
+//   border: 0; }
+
+// a,
+// abbr,
+// acronym,
+// address,
+// applet,
+// article,
+// aside,
+// audio,
+// b,
+// big,
+// blockquote,
+// body,
+// canvas,
+// caption,
+// center,
+// cite,
+// code,
+// dd,
+// del,
+// details,
+// dfn,
+// div,
+// dl,
+// dt,
+// em,
+// embed,
+// fieldset,
+// figcaption,
+// figure,
+// footer,
+// form,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// header,
+// hgroup,
+// html,
+// i,
+// iframe,
+// img,
+// ins,
+// kbd,
+// label,
+// legend,
+// li,
+// mark,
+// menu,
+// nav,
+// object,
+// ol,
+// output,
+// p,
+// pre,
+// q,
+// ruby,
+// s,
+// samp,
+// section,
+// small,
+// span,
+// strike,
+// strong,
+// sub,
+// summary,
+// sup,
+// table,
+// tbody,
+// td,
+// tfoot,
+// th,
+// thead,
+// time,
+// tr,
+// tt,
+// u,
+// ul,
+// var,
+// video {
+//   margin: 0;
+//   padding: 0;
+//   border: 0;
+//   font: inherit;
+//   font-size: 100%;
+//   vertical-align: baseline; }
+
+// html {
+//   line-height: 1; }
+
+// ol,
+// ul {
+//   list-style: none; }
+
+// caption,
+// td,
+// th {
+//   text-align: left;
+//   font-weight: 400;
+//   vertical-align: middle; }
+
+// blockquote,
+// q {
+//   quotes: none; }
+
+// blockquote:after,
+// blockquote:before,
+// q:after,
+// q:before {
+//   content: "";
+//   content: none; }
+
+// a img {
+//   border: none; }
+
+// article,
+// aside,
+// details,
+// figcaption,
+// figure,
+// footer,
+// header,
+// hgroup,
+// main,
+// menu,
+// nav,
+// section,
+// summary {
+//   display: block; }
+
+// /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+// audio,
+// canvas,
+// progress,
+// video {
+//   display: inline-block;
+//   vertical-align: baseline; }
+
+// audio:not([controls]) {
+//   display: none;
+//   height: 0; }
+
+// [hidden],
+// template {
+//   display: none; }
+
+// a {
+//   background: 0 0; }
+
+// a:active,
+// a:hover {
+//   outline: 0; }
+
+// abbr[title] {
+//   border-bottom: 1px dotted; }
+
+// dfn {
+//   font-style: italic; }
+
+// mark {
+//   background: #ff0;
+//   color: #000; }
+
+// small {
+//   font-size: 80%; }
+
+// sub,
+// sup {
+//   font-size: 75%;
+//   line-height: 0;
+//   position: relative;
+//   vertical-align: baseline; }
+
+// sup {
+//   top: -0.5em; }
+
+// sub {
+//   bottom: -0.25em; }
+
+// svg:not(:root) {
+//   overflow: hidden; }
+
+// figure {
+//   margin: 1em 40px; }
+
+// hr {
+//   -moz-box-sizing: content-box;
+//   box-sizing: content-box;
+//   height: 0; }
+
+// pre,
+// textarea {
+//   overflow: auto; }
+
+// code,
+// kbd,
+// pre,
+// samp {
+//   font-family: monospace, monospace;
+//   font-size: 1em; }
+
+// button,
+// input,
+// optgroup,
+// select,
+// textarea {
+//   color: inherit;
+//   font: inherit;
+//   margin: 0; }
+
+// button {
+//   overflow: visible; }
+
+// button,
+// select {
+//   text-transform: none; }
+
+// button,
+// html input[type=button],
+// input[type=reset],
+// input[type=submit] {
+//   -webkit-appearance: button;
+//   cursor: pointer; }
+
+// button[disabled],
+// html input[disabled] {
+//   cursor: default; }
+
+// button::-moz-focus-inner,
+// input::-moz-focus-inner {
+//   border: 0;
+//   padding: 0; }
+
+// input {
+//   line-height: normal; }
+
+// input[type=checkbox],
+// input[type=radio] {
+//   box-sizing: border-box;
+//   padding: 0; }
+
+// input[type=number]::-webkit-inner-spin-button,
+// input[type=number]::-webkit-outer-spin-button {
+//   height: auto; }
+
+// input[type=search] {
+//   -webkit-appearance: textfield;
+//   -moz-box-sizing: content-box;
+//   -webkit-box-sizing: content-box;
+//   box-sizing: content-box; }
+
+// input[type=search]::-webkit-search-cancel-button,
+// input[type=search]::-webkit-search-decoration {
+//   -webkit-appearance: none; }
+
+// fieldset {
+//   border: 1px solid silver;
+//   margin: 0 2px;
+//   padding: 0.35em 0.625em 0.75em; }
+
+// legend {
+//   padding: 0; }
+
+// optgroup {
+//   font-weight: 700; }
+
+// table {
+//   border-collapse: collapse;
+//   border-spacing: 0; }
+
+// td,
+// th {
+//   padding: 0; }
+
+// .clearfix:after {
+//   content: '.';
+//   display: block;
+//   clear: both;
+//   visibility: hidden;
+//   line-height: 0;
+//   height: 0; }
+
+// .clearfix {
+//   display: inline-block; }
+
+// html[xmlns] .clearfix {
+//   display: block; }
+
+// * html .clearfix {
+//   height: 1%; }
+
+// html, body {
+//   width: 100%;
+//   min-height: 100%;
+//   height: 100%;
+//   font-size: 100%;
+//   font-family: $font-family;
+//   line-height: 1.2;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// /* HTML5 display-role reset for older browsers */
+// article, aside, details, figcaption, figure,
+// footer, header, hgroup, menu, nav, section {
+// 	display: block;
+// }
+
+// * {
+//   box-sizing: border-box;
+//   &:focus {
+//     outline: none;
+//   }
+// }
+
+// a, button {
+//   text-decoration: none;
+//   cursor: pointer;
+// }
+
+
+// // MATERIAL STYLES RESET
+// .mat-dialog-container {
+//   margin: 0 !important;
+//   padding: 0 !important;
+//   border-radius: 0 !important;
+// }
+// .terms-dialog {
+
+//   @include for-phone-only {
+//     max-width: 100%!important;
+//   }
+//   @include for-tablet-portrait-up {
+//     margin: 35px 20px !important;
+//     max-width: 1000px !important;
+//   }
+// }
+// .cdk-global-overlay-wrapper {
+//   @include for-tablet-portrait-up {
+//     justify-content: center!important;
+//   }
+//   .cdk-overlay-pane {
+//     max-width: 100vw!important;
+//   }
+// }
+
+// .cdk-global-scrollblock {
+//   overflow-y: auto;
+// }

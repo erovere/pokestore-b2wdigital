@@ -1,0 +1,117 @@
+@-webkit-keyframes shopFadeIn {
+  0%   { opacity: 0; margin-left: -30px; }
+  100% { opacity: 1; margin-left: 0px; }
+}
+@-moz-keyframes shopFadeIn {
+  0%   { opacity: 0; margin-left: -30px; }
+  100% { opacity: 1; margin-left: 0px; }
+}
+@-o-keyframes shopFadeIn {
+  0%   { opacity: 0; margin-left: -30px; }
+  100% { opacity: 1; margin-left: 0px; }
+}
+@keyframes shopFadeIn {
+  0%   { opacity: 0; margin-left: -30px; }
+  100% { opacity: 1; margin-left: 0px; }
+}
+
+
+@keyframes level10bar {
+    from {width: 0;}
+    to {width: 10%;}
+  }
+  @keyframes level20bar {
+    from {width: 0;}
+    to {width: 20%;}
+  }
+  @keyframes level30bar {
+    from {width: 0;}
+    to {width: 30%;}
+  }
+  @keyframes level40bar {
+    from {width: 0;}
+    to {width: 40%;}
+  }
+  @keyframes level50bar {
+    from {width: 0;}
+    to {width: 50%;}
+  }
+  @keyframes level60bar {
+    from {width: 0;}
+    to {width: 60%;}
+  }
+  @keyframes level70bar {
+    from {width: 0;}
+    to {width: 70%;}
+  }
+  @keyframes level80bar {
+    from {width: 0;}
+    to {width: 80%;}
+  }
+  @keyframes level90bar {
+    from {width: 0;}
+    to {width: 90%;}
+  }
+  @keyframes level100bar {
+    from {width: 0;}
+    to {width: 100%;}
+  }
+
+  @keyframes fulfill {
+    from {width: 0;}
+    to {width: 100%;}
+  }
+
+  /* right bounce */
+@-webkit-keyframes bounceRight {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  60% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+}
+@-moz-keyframes bounceRight {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+}
+@keyframes bounceRight {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+  40% {
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  60% {
+    -ms-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+}
+/* /right bounce */

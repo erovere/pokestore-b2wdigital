@@ -1,0 +1,97 @@
+$leadz-typography: mat-typography-config(
+  $font-family: 'Roboto, Heebo, sans-serif',
+);
+
+@include mat-core($leadz-typography);
+
+// Typography Colors
+$leadz-dark-text: #50555A;
+$leadz-light-text: #FFFFFF;
+
+// Primary Color Palette
+$leadz-primary: (
+  main: $primary-color-01,
+  lighter: $primary-color-02,
+  darker: $primary-color-03,
+  200: $primary-color-01,
+  contrast: (
+    main: $primary-text-color-01,
+    lighter: $primary-text-color-02,
+    darker: $primary-text-color-03,
+  )
+);
+
+// Secondary Color Palette
+$leadz-accent: (
+  main: $secondary-color-01,
+  lighter: $secondary-color-02,
+  darker: $secondary-color-03,
+  200: $secondary-color-01,
+  contrast: (
+    main: $secondary-text-color-01,
+    lighter: $secondary-text-color-02,
+    darker: $secondary-text-color-03,
+  )
+);
+
+// Warning Color Palette
+$leadz-warn: (
+  main: #FF3535,
+  lighter: #FFC2C2,
+  darker: #FF2222,
+  200: #FF3535,
+  contrast: (
+    main: #000,
+    lighter: #000,
+    darker: #FFF,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$theming-material-components-primary: mat-palette(
+  $leadz-primary,
+  main,
+  lighter,
+  darker
+);
+$theming-material-components-accent: mat-palette(
+  $leadz-accent,
+  main,
+  lighter,
+  darker
+);
+
+// The warn palette is optional (defaults to red).
+$theming-material-components-warn: mat-palette(
+  $leadz-warn,
+  main,
+  lighter,
+  darker
+);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$theming-material-components-theme: mat-light-theme(
+  $theming-material-components-primary,
+  $theming-material-components-accent,
+  $theming-material-components-warn,
+);
+
+@mixin _mat-tab-label-focus($tab-focus-color) {
+    .mat-tab-label,
+    .mat-tab-link {
+        &.cdk-keyboard-focused,
+        &.cdk-program-focused {
+            &:not(.mat-tab-disabled) {
+            background-color: #E5E5E5 !important;
+            }
+        }
+    }
+}
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theming-material-components-theme);

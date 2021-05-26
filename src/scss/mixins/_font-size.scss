@@ -1,0 +1,7 @@
+@import './rem';
+
+@mixin font($size, $height: 1, $spacing: normal) {
+  @include rem(font-size, $size);
+  line-height: $height;
+  letter-spacing: $spacing;
+}

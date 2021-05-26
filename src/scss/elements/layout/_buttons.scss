@@ -1,0 +1,36 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 300ms ease;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 16px;
+    
+    &--primary {
+        background-color: $secondary-color;
+        border: 1px solid transparent;
+        color: white;
+        font-weight: 700;
+        &:hover:not(:disabled) {
+            color: white;
+        }
+        &:disabled {
+            opacity: 0.5;
+            background: transparent;
+            color: #9BA5AE;
+            border: 1px solid #9BA5AE;
+            cursor: not-allowed;
+        }
+        @include for-tablet-landscape-up{
+            &:hover:not(:disabled) {
+                color: white;
+                filter: saturate(0.8);
+            }
+        }
+    }
+}

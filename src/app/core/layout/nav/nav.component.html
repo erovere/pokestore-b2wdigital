@@ -3,15 +3,12 @@
         <div class="logo">
             <a routerLink="home">                
                 <div class="pokeball"></div>
-                <!-- <img [src]="logoUrl" alt="logo" data-test="logo-img" /> -->
             </a>
             <div>
                 <h1>Poke Store</h1>
                 <h2><span>{{pokemonFamily}}</span> edition</h2>
             </div>
         </div>
-        <div class="search" *ngIf="isFeatureEnabled('searchbar')">
-            <input type="text" placeholder="Buscar Pokemon...">
-        </div>
+        
     </div>
 </header>

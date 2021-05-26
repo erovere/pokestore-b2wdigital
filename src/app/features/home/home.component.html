@@ -1,3 +1,160 @@
-<div class="content-wrapper">
-    <p data-test="my-paragraph">Bem vindo a Poke Store!<br><br>Em breve teremos novidades por aqui!</p>
+<div class="main-content">
+    <section class="store">
+        <div class="content-wrapper">
+            <div class="searchbar" *ngIf="isFeatureEnabled('searchbar')">
+                <input type="text" placeholder="Buscar Pokemon...">
+            </div>
+            <div class="product-container" *ngIf="pokemonListFiltered; else loadingPokemons">
+                <div class="product-card" *ngFor="let pokemon of pokemonListFiltered; let i = index">
+                    <div class="product-image">
+                        <img loading="lazy" [src]='"https://pokeres.bastionbot.org/images/pokemon/" + getPokemonIdFromURL(pokemon.pokemon.url) + ".png"' alt="Imagem do pokemon {{pokemon.pokemon.name}}">
+                    </div>
+                    <div class="product-info">
+                        <strong>{{pokemon.pokemon.name | titlecase }}</strong>
+                        <p>Preço: {{getPokemonIdFromURL(pokemon.pokemon.url)}}</p>
+                    </div>
+                    <div class="product-actions">
+                        <button type="button" class="btn btn--primary" (click)="addToCart(getPokemonIdFromURL(pokemon.pokemon.url))">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+            <button *ngIf="(pokemonListFiltered) && (maxRecordsToShow > recordsRendered)" type="button" class="btn btn--primary btn-show-more-records" (click)="mountPokemonsToStore(12)">Mostrar mais</button>
+
+            <ng-template #loadingPokemons>
+                <div class="loading-grid">
+                    <div>
+                        <div class="ph-item">
+                            <div class="ph-col-12">
+                                <div class="ph-picture"></div>
+                                <div class="ph-row">
+                                    <div class="ph-col-6 big"></div>
+                                    <div class="ph-col-6 empty"></div>
+                                    <div class="ph-col-12"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ph-row">
+                                    <div class="ph-col-12"></div>
+                                    <div class="ph-col-2"></div>
+                                    <div class="ph-col-10 empty"></div>
+                                    <div class="ph-col-10 big"></div>
+                                    <div class="ph-col-2 big empty"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ph-item">
+                            <div class="ph-col-12">
+                                <div class="ph-picture"></div>
+                                <div class="ph-row">
+                                    <div class="ph-col-6 big"></div>
+                                    <div class="ph-col-6 empty"></div>
+                                    <div class="ph-col-12"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ph-row">
+                                    <div class="ph-col-12"></div>
+                                    <div class="ph-col-2"></div>
+                                    <div class="ph-col-10 empty"></div>
+                                    <div class="ph-col-10 big"></div>
+                                    <div class="ph-col-2 big empty"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ph-item">
+                            <div class="ph-col-12">
+                                <div class="ph-picture"></div>
+                                <div class="ph-row">
+                                    <div class="ph-col-6 big"></div>
+                                    <div class="ph-col-6 empty"></div>
+                                    <div class="ph-col-12"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ph-row">
+                                    <div class="ph-col-12"></div>
+                                    <div class="ph-col-2"></div>
+                                    <div class="ph-col-10 empty"></div>
+                                    <div class="ph-col-10 big"></div>
+                                    <div class="ph-col-2 big empty"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ph-item">
+                            <div class="ph-col-12">
+                                <div class="ph-picture"></div>
+                                <div class="ph-row">
+                                    <div class="ph-col-6 big"></div>
+                                    <div class="ph-col-6 empty"></div>
+                                    <div class="ph-col-12"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ph-row">
+                                    <div class="ph-col-12"></div>
+                                    <div class="ph-col-2"></div>
+                                    <div class="ph-col-10 empty"></div>
+                                    <div class="ph-col-10 big"></div>
+                                    <div class="ph-col-2 big empty"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ph-item">
+                            <div class="ph-col-12">
+                                <div class="ph-picture"></div>
+                                <div class="ph-row">
+                                    <div class="ph-col-6 big"></div>
+                                    <div class="ph-col-6 empty"></div>
+                                    <div class="ph-col-12"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ph-row">
+                                    <div class="ph-col-12"></div>
+                                    <div class="ph-col-2"></div>
+                                    <div class="ph-col-10 empty"></div>
+                                    <div class="ph-col-10 big"></div>
+                                    <div class="ph-col-2 big empty"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ph-item">
+                            <div class="ph-col-12">
+                                <div class="ph-picture"></div>
+                                <div class="ph-row">
+                                    <div class="ph-col-6 big"></div>
+                                    <div class="ph-col-6 empty"></div>
+                                    <div class="ph-col-12"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="ph-row">
+                                    <div class="ph-col-12"></div>
+                                    <div class="ph-col-2"></div>
+                                    <div class="ph-col-10 empty"></div>
+                                    <div class="ph-col-10 big"></div>
+                                    <div class="ph-col-2 big empty"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </div>    
+    </section>
+    
+    <aside class="cart">
+        <h2>Carrinho:</h2>
+        
+    </aside>    
 </div>

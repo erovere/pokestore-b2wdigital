@@ -1,0 +1,32 @@
+// 1. Typography
+// ==========================================================================
+$font-family: 'Roboto', sans-serif;
+$font-base-size: 16px;
+$font-base-color: #696969;
+
+// 2. Color Palette
+// ==========================================================================
+@import './colors';
+
+// 3. Grid
+// ==========================================================================
+$num-cols: 12 !default;
+$container-gutter: 15px !default;
+$container-gutter-medium: 15px !default;
+$container-gutter-large: 15px !default;
+$gutter-width: 16px !default;
+$gutter-width-medium: 16px !default;
+$gutter-width-large: 28px !default;
+
+// 4. Placeholder
+// ==========================================================================
+$ph-bg:                   #fff !default;
+$ph-color:                #ced4da !default;
+$ph-border-radius:        2px !default;
+
+$ph-gutter:               15px !default;
+$ph-spacer:               15px !default;
+
+$ph-avatar-border-radius: 50% !default;
+
+$ph-animation-duration:   .8s !default;
