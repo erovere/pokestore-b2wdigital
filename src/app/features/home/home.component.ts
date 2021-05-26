@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit{
     public recordsRendered;
     public QTD_POKEMONS_TO_SHOW = 21;
 
+    public isCartEmpty = true;
+
     constructor(
         private configurationService: ConfigurationService,
         private api: ApiService
@@ -71,6 +73,7 @@ export class HomeComponent implements OnInit{
     }
 
     public addToCart(pokemonId: number): void {
+        this.isCartEmpty = false;
         console.log('pokemon id selected: ', pokemonId);
     }
  }

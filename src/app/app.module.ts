@@ -8,7 +8,6 @@ import { environment } from '@env/environment';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TenantInterceptor } from './core/interceptors/tenant.interceptor';
 
-
 @NgModule({
     declarations: [AppComponent],
     imports: [

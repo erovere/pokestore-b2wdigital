@@ -1,4 +1,4 @@
-<div class="main-content">
+<div class="home-main-content" [class]="isCartEmpty ? '' : 'cart-with-items'">
     <section class="store">
         <div class="content-wrapper">
             <div class="searchbar" *ngIf="isFeatureEnabled('searchbar')">
@@ -6,7 +6,7 @@
             </div>
             <div class="product-container" *ngIf="pokemonListFiltered; else loadingPokemons">
                 <div class="product-card" *ngFor="let pokemon of pokemonListFiltered; let i = index">
-                    <div class="product-image">
+                    <div class="product-image" [routerLink]="['/pokemon/details/', getPokemonIdFromURL(pokemon.pokemon.url)]">
                         <img loading="lazy" [src]='"https://pokeres.bastionbot.org/images/pokemon/" + getPokemonIdFromURL(pokemon.pokemon.url) + ".png"' alt="Imagem do pokemon {{pokemon.pokemon.name}}">
                     </div>
                     <div class="product-info">

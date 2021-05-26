@@ -13,8 +13,13 @@ const routes: Routes = [
             import('./features/home/home.module').then((m) => m.HomeModule)
     },
     {
+        path: 'pokemon/details/:id',
+        loadChildren: () =>
+            import('./features/pokemon/pokemon.module').then((m) => m.PokemonModule)
+    },
+    {
         path: '**',
-        redirectTo: 'home',
+        redirectTo: '',
     },
 ];
 

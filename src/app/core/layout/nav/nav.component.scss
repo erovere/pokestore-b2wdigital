@@ -4,28 +4,57 @@ header.main-header {
     .content-wrapper {
         display: flex;
         align-items: center;
+        padding: 0 40px;
     }
     .logo {
         margin-right: 20px;
         display: flex;
         align-items: center;
+        flex: 1;
         a {
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             text-decoration: none;
+            flex-direction: column;
             img {
                 max-width: 120px;
                 max-height: 60px;
             }
         }
         h1{
-            color: black;
+            color: white;
             font-family: 'Circular-Loom';
             font-size: 1.6rem;
+            display: block;
         }
-        h2{
+        p{
             font-size: 1rem;
             font-style: italic;
+            display: block;
+            color: white;
+            font-weight: bold;
+            font-family: cursive;
+        }
+    }
+    nav{
+        width: 100%;
+        flex: 2;
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            margin-left: auto;
+            li{
+                a{
+                    color: white;
+                    text-decoration: none;
+                    &:hover{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     }
 }

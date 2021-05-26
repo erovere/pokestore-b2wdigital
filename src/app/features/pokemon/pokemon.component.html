@@ -1,0 +1,48 @@
+<div class="pokemon-main-content" *ngIf="!loading">
+    <div class="content-wrapper">
+        <button type="button" class="btn btn--back" (click)="handleBack()">
+            <mat-icon>arrow_back</mat-icon>
+            <span>Voltar</span>
+        </button>    
+    </div>
+    <section class="pokemon-details">
+        <div class="pokemon-image">
+            <img [src]='"https://pokeres.bastionbot.org/images/pokemon/" + pokemonId + ".png"' alt="Imagem do pokemon {{pokemonDetails.name}}">
+        </div>
+        <div class="pokemon-information">
+            <h2>{{pokemonDetails.name | titlecase}}</h2>
+            <div class="pokemon-data">
+                <h3><u>Ficha técnica:</u></h3>
+                <ul>
+                    <li>                        
+                        <p><strong>Nome:</strong> {{pokemonDetails.name | titlecase}}</p>
+                    </li>
+                    <li>                        
+                        <p><strong>Número na PokeDex:</strong> {{pokemonDetails.id}}</p>
+                    </li>
+                    <li>                        
+                        <p><strong>Tipo:</strong> {{getPokemonTypes}}</p>
+                    </li>
+                    <li>                        
+                        <p><strong>Altura e peso:</strong> {{pokemonDetails.height / 10}}m / {{pokemonDetails.weight / 10}}kg </p>
+                    </li>
+                    <li>                        
+                        <p><strong>Ataques:</strong> {{getPokemonMoves}}</p>
+                    </li>
+                    <li>                        
+                        <p><strong>Habilidades:</strong> {{getPokemonAbility}}</p>
+                    </li>
+                    <li>                        
+                        <p><strong>Representação em jogos eletrônicos:</strong></p>
+                        <img [src]='getPokemonSprites' alt="Imagem do pokemon {{pokemonDetails.name}}">
+                    </li>
+                </ul>                
+            </div>            
+            <button type="button" class="btn btn--primary btn-add-to-cart">Adicionar ao carrinho</button>
+            <!-- <button type="button" class="btn btn--primary" (click)="addToCart(pokemonDetails.id)">Adicionar ao carrinho</button> -->
+        </div>    
+    </section>
+</div>
+<div class="loading" *ngIf="loading">
+    <div></div>
+</div>

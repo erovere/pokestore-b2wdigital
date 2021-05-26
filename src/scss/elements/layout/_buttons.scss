@@ -33,4 +33,20 @@
             }
         }
     }
+    &--back {
+        background-color: transparent;        
+        width: 100px;
+        border: 1px solid #b7b7b7;
+        span{
+            display: inline-block;
+            margin-left: 5px;
+            margin-right: 5px;
+            transition: margin-right 200ms ease-in-out;
+        }
+        &:hover{
+            span{
+                margin-right: 10px;
+            }
+        }
+    }
 }

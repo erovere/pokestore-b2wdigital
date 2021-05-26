@@ -43,6 +43,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Modal de cookie consent, aplicando as regras da LGPD.
 * Layout de Black Friday
 * Modelagem de README com detalhamento da arquitetura white label.
+* Cores das lojas
+* Icones nos menus
+* Revisar ALT e semanticas
 
 ## Verificar: ##
 PWA
