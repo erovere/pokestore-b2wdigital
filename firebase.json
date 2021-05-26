@@ -1,6 +1,21 @@
 {
     "hosting": [        
         {
+            "target": "pokestore-b2wdigital",
+            "public": "dist/pokestore-b2wdigital",
+            "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+            ],
+            "rewrites": [
+                {
+                    "source": "**",
+                    "destination": "/index.html"
+                }
+            ]
+        },
+        {
             "target": "fire",
             "public": "dist/pokestore-b2wdigital",
             "ignore": [
