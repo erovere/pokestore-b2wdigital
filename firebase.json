@@ -1,6 +1,7 @@
 {
-    "hosting": [        
+    "hosting": [       
         {
+            "predeploy": "npm run build-prod",
             "target": "pokestore-b2wdigital",
             "public": "dist/pokestore-b2wdigital",
             "ignore": [
@@ -16,6 +17,7 @@
             ]
         },
         {
+            "predeploy": "npm run build-prod",
             "target": "fire",
             "public": "dist/pokestore-b2wdigital",
             "ignore": [
@@ -31,6 +33,7 @@
             ]
         },
         {
+            "predeploy": "npm run build-prod",
             "target": "water",
             "public": "dist/pokestore-b2wdigital",
             "ignore": [
@@ -46,6 +49,7 @@
             ]
         },
         {
+            "predeploy": "npm run build-prod",
             "target": "grass",
             "public": "dist/pokestore-b2wdigital",
             "ignore": [
@@ -61,6 +65,7 @@
             ]
         },
         {
+            "predeploy": "npm run build-prod",
             "target": "ghost",
             "public": "dist/pokestore-b2wdigital",
             "ignore": [
@@ -76,6 +81,7 @@
             ]
         },
         {
+            "predeploy": "npm run build-prod",
             "target": "ice",
             "public": "dist/pokestore-b2wdigital",
             "ignore": [

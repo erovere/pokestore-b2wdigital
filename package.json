@@ -4,6 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-fire": "ng serve --port 4200",
+    "start-water": "ng serve --port 4201",
+    "start-grass": "ng serve --port 4202",
+    "start-ghost": "ng serve --port 4203",
+    "start-ice": "ng serve --port 4204",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

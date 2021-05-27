@@ -1,79 +1,72 @@
 export default {
-    id: 7010,
-    name: 'fire',
-    type: 10,
-    theme: {
-        'primary-color'   : '#d83f3f',
-        'secondary-color' : '#c24d4d',
-        'tertiary-color'  : '#fddfdf',
-        'text-color'      : '#696969',
-        'background-color': '#f5f5f5',
-        // 'pokeball-color': '#b71c1c'
+    "fire": {
+        "id": 7010,
+        "name": "fire",
+        "type": 10,
+        "theme": {
+            "primary-color": "#d83f3f",
+            "secondary-color": "#c24d4d",
+            "tertiary-color": "#fddfdf",
+            "text-color": "#696969",
+            "background-color": "#f5f5f5"
+        },
+        "logoImageUrl": "./assets/logos/pokestore.png",
+        "features": [ "details", "cashback", "searchbar" ]
     },
-    logoImageUrl: './assets/logos/pokestore.png',
-    features: ['details', 'cashback', 'searchbar'],
+    "water": {
+        "id": 7011,
+        "name": "water",
+        "type": 11,
+        "theme": {
+            "primary-color": "#4d79ff",
+            "secondary-color": "#0b52d4",
+            "tertiary-color": "#cfdbee",
+            "text-color": "#696969",
+            "background-color": "#f5f5f5"
+        },
+        "logoImageUrl": "./assets/logos/pokestore.png",
+        "features": [ "details", "cashback", "searchbar" ]
+    },
+    "grass": {
+        "id": 7012,
+        "name": "grass",
+        "type": 12,
+        "theme": {
+            "primary-color": "#279240",
+            "secondary-color": "#287f3c",
+            "tertiary-color": "#cdded1",
+            "text-color": "#696969",
+            "background-color": "#f5f5f5"
+        },
+        "logoImageUrl": "./assets/logos/pokestore.png",
+        "features": [ "details", "cashback", "searchbar" ]
+    },
+    "ghost": {
+        "id": 7008,
+        "name": "ghost",
+        "type": 8,
+        "theme": {
+            "primary-color": "#722894",
+            "secondary-color": "#8540a4",
+            "tertiary-color": "#e7d3f0",
+            "text-color": "#696969",
+            "background-color": "#f5f5f5"
+        },
+        "logoImageUrl": "./assets/logos/pokestore.png",
+        "features": [ "details", "cashback", "searchbar" ]
+    },
+    "ice": {
+        "id": 7015,
+        "name": "ice",
+        "type": 15,
+        "theme": {
+            "primary-color": "#198aa6",
+            "secondary-color": "#186b7f",
+            "tertiary-color": "#7ed4d8",
+            "text-color": "#696969",
+            "background-color": "#f5f5f5"
+        },
+        "logoImageUrl": "./assets/logos/pokestore.png",
+        "features": [ "details", "cashback", "searchbar" ]
+    }
 };
-
-// export default {
-//     id: 7011,
-//     name: 'water',
-//     type: 11,
-//     theme: {
-//         'primary-color'   : '#d83f3f',
-//         'secondary-color' : '#c24d4d',
-//         'tertiary-color'  : '#fddfdf',
-//         'text-color'      : '#696969',
-//         'background-color': '#f5f5f5',
-//          //          'pokeball-color': '#b71c1c'
-//     },
-//     logoImageUrl: './assets/logos/pokestore.png',
-//     features: ['details', 'cashback', 'searchbar'],
-// };
-
-// export default {
-//     id: 7012,
-//     name: 'grass',
-//     type: 12,
-//     theme: {
-//         'primary-color'   : '#d83f3f',
-//         'secondary-color' : '#c24d4d',
-//         'tertiary-color'  : '#fddfdf',
-//         'text-color'      : '#696969',
-//         'background-color': '#f5f5f5',
-//          'pokeball-color': '#b71c1c'
-//     },
-//     logoImageUrl: './assets/logos/pokestore.png',
-//     features: ['details', 'cashback', 'searchbar'],
-// };
-
-// export default {
-//     id: 7008,
-//     name: 'ghost',
-//     type: 8,
-//     theme: {
-//         'primary-color'   : '#d83f3f',
-//         'secondary-color' : '#c24d4d',
-//         'tertiary-color'  : '#fddfdf',
-//         'text-color'      : '#696969',
-//         'background-color': '#f5f5f5',
-//          'pokeball-color': '#b71c1c'
-//     },
-//     logoImageUrl: './assets/logos/pokestore.png',
-//     features: ['details', 'cashback', 'searchbar'],
-// };
-
-// export default {
-//     id: 7015,
-//     name: 'ice',
-//     type: 15,
-//     theme: {
-//         'primary-color'   : '#d83f3f',
-//         'secondary-color' : '#c24d4d',
-//         'tertiary-color'  : '#fddfdf',
-//         'text-color'      : '#696969',
-//         'background-color': '#f5f5f5',
-//          'pokeball-color': '#b71c1c'
-//     },
-//     logoImageUrl: './assets/logos/pokestore.png',
-//     features: ['details', 'cashback', 'searchbar'],
-// };

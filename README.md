@@ -1,59 +1,161 @@
 # PokestoreB2wDigital
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.3.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+O desafio deste projeto foi criar uma aplicação Web de "Loja Pokémon", com uma estrutura única que comportasse diversos estilos mas preservasse o mesmo comportamento, para que a loja pudesse ser aplicada a diferentes tipos de Pokémon. Ou seja, criar uma aplicação multi-tenant/white label, onde Pokémons pudessem ser visualizados e adicionados em um carrinho de compras, simulando um fluxo real de Loja.
+O projeto foi desenvolvido dentro do Processo Seletivo para a vaga de Front-end Sênior da empresa B2WDigital.
 
 
-### O que o projeto possui: ##
+## Sumário
+* [Responsáveis](#responsáveis)
+* [Executando o projeto localmente](#executando-o-projeto-localmente)
+* [Gerando novos componentes, se necessário](#gerando-novos-componentes-se-necessario)
+* [Dependências](#dependências)
+* [APIs](#apis)
+* [Builds e testes](#builds-e-testes)
+* [Releases (CD)](#releases-(cd))
+* [Desafio Solicitado](#desafio-solicitado)
+* [Extras](#extras)
+* [Backlog de melhorias](#backlog-de-melhorias)
+* [Bônus](#bonus)
 
-* Arquitetura Angular Whitelabel, que permite uma fácil manipulação e expansão da aplicação para diversos clientes (em código, chamados de Tenant).
-* Armazenamento de cookies para guardar os temas das lojas, para otimizar carregamento da aplicação e diminuir consumo de memória da aplicação.
-* CI/CD totalmente configurado e automatizado com Github e Firebase integrados. Quando um Pull Request bate na branch master, automaticamente publica no firebase e espelha em todas lojas simultaneamente.
-* Site principal com espelhamento automático em outros tenants (fire, water, grass, ghost e ice) a partir da mesma aplicação.
-* SEO e otimizações para compartilhamento em redes sociais.
-* Busca de pokemons a partir de 2 caracteres, para evitar consumo excessivo de memória da aplicação.
-* Código passando em ng lint.
+## Responsáveis
+* **Desenvolvedor**: Eduardo Roveré <eduardo.rovere@gmail.com>
+* **UI/UX**: Eduardo Roveré (Com ideias da linha arquitetural partidas de um wireframe proposto pela B2WDigital)
 
-## Backlog do projeto: ##
-* Modal de cashback AME após realizar uma compra de Pokemon;
-* Integração com GTM/GA em eventos front-end, trackear todos os eventos da aplicação em cada uma das lojas e gerar relatório delas;
-* Carrinho de compras que aparece apenas após adicionar itens, na lateral direita;
-* Carrinho com notificação no mobile (icone de carrinho apenas e ele escondido para economizar viewport);
-* Modal de cookie consent, aplicando as regras da LGPD.
-* Layout de Black Friday
-* Modelagem de README com detalhamento da arquitetura white label.
-* Cores das lojas
-* Icones nos menus
-* Revisar ALT e semanticas
-* Feedback ao usuário ao clicar em adicionar ao carrinho
 
-## Verificar: ##
-PWA
-Lighthouse
-Somatória de valores no carrinho
+## Executando o projeto localmente
 
-**JSON SERVER**
-https://my-json-server.typicode.com/erovere/poketenantconfig
+1. Após baixar este projeto na sua máquina, rode um `npm install` para instalar todas as dependências do projeto.
+2. Para simular os estilos das múltiplas lojas de tipos de Pokémon e carregar os dados white label de cada uma delas, orienta-se rodar o servidor local em diferentes portas. No arquivo `host-to-tenant-map.ts` você encontrará os apontamentos, relacionando as URLs com os tenantIDs definidos.
+Para visualizar a loja Pokémon "Fire" localmente, rode: `npm run start-fire`. A título de conhecimento, a porta localhost:4200 foi definida para esta loja por padrão. Então se você rodar o servidor normalmente, sempre abrirá na loja de Fogo.
+
+Para visualizar a loja Pokémon "Water" localmente, rode: `npm run start-water`.
+Para visualizar a loja Pokémon "Grass" localmente, rode: `npm run start-grass`.
+Para visualizar a loja Pokémon "Ghost" localmente, rode: `npm run start-ghost`.
+Para visualizar a loja Pokémon "Ice" localmente, rode: `npm run start-ice`.
+
+Obs: O sistema possui um `configuration.service.ts`, que traz as configurações de cada loja do projeto. Primeiro tentamos captar as configurações de tema da API definida. Caso a API esteja indisponível, existe uma callback que puxa os dados do `default-configuration.ts`.
+
+
+
+## Gerando novos componentes, se necessário
+
+Rode o comando padrão da CLI do Angular `ng generate component component-name` para gerar um novo componente. Você também pode usar `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+
+## Dependências
+As dependências do projeto estão listadas no arquivo package.json e precisam ser instaladas com o comando `npm install`.
+
+## APIs
+* gateway-b2u
+  * URLs
+    * Prod: (https://gateway-b2u.wizsolucoes.com.br/api/v1/wizteliga)
+    * Hml: (https://gateway-canalremoto-hml.azurewebsites.net/api/v1/wizteliga)
+  * Swagger
+    
+  * Configurações White Label: Elas se encontram no wizcorporativo-appconfig, dentro do Portal Azure da Wiz.   
+
+## Build e Testes
+* Comando para lint:
+    Rode o comando `npx ng lint` para rodar um lint no projeto e analisar se tudo está OK.
+
+* Comando para geração de build:
+    Rode o comando `ng build` para gerar uma build do projeto. Os artefatos da build serão armazenados na pasta `dist/`. 
+
+* Build para Stage:
+    Rode o comando `npm run build-staging` para gerar a build de Staging. 
+
+* Build para Production:
+    Rode o comando `npm run build-prod` para gerar a build de Produção. 
+
+* Build para Production mais minificado:
+    Rode o comando `npm run build-prod-min` para gerar a build de Produção. 
+
+        
+* Comandos para testes:
+    Rode o comando `ng test` para executar testes unitários pelo [Karma](https://karma-runner.github.io).
+    Rode o comando `ng e2e` para executar testes end-to-end via [Protractor](http://www.protractortest.org/).
+
+
+## Releases
+* URLs
+
+| Loja          | URL                              |
+|---------------|----------------------------------|
+| Fire Pokémon  | https://fire-pokestore.web.app/  |
+| Water Pokémon | https://water-pokestore.web.app/ |
+| Grass Pokémon | https://grass-pokestore.web.app/ |
+| Ghost Pokémon | https://ghost-pokestore.web.app/ |
+| Ice Pokémon   | https://ice-pokestore.web.app/   |
+
+A API de dados de cada loja está sendo simulada através do json-server da Typicode:
+* https://my-json-server.typicode.com/erovere/poketenantconfig
+
+
+
+## Desafio solicitado
+
+- [x] Catálogo de produtos
+- [ ] Carrinho lateral
+- [x] Resumo do carrinho
+- [x] 5 lojas com estilos e tipos diferentes de Pokémon
+- [x] Barra de busca para filtrar os Pokémon
+- [x] Botão de finalizar compra, reiniciando o processo de compra
+- [x] Modal de obrigado ao finalizar compra
+- [x] Salvar os dados da compra do usuário localmente para não perdê-las ao atualizar a página
+- [x] Colocá-lo online em alguma url pública para que as pessoas consigam utilizar a loja, afinal como vamos vender Pokémon se não nos acharem?
+- [x] Uma página com mais detalhes do Pokémon, tendo informações como os tipos, movimentos, pontos fracos e pontos fortes. Dessa forma o usuário poderá navegar para essa página e adicionar o Pokémon no carrinho ou voltar para o catálogo.
+
+
+## Extras
+
+- [x] Projeto desenvolvido em Angular 10, com uma arquitetura criada para dar suporte ao projeto de forma White Label, que permite uma fácil manipulação, customização e expansão da aplicação para diversos outros clientes (ou, neste caso, diferentes lojas de tipos de Pokémon).
+- [x] Armazenamento de cookies para guardar os dados de temas das lojas, para otimizar carregamento e diminuir consumo de memória da aplicação.
+- [x] Fluxo de CI/CD totalmente configurado e automatizado com Github e Firebase integrados. Quando um Pull Request chega na branch master, automaticamente publica nos servidores de hosting do Firebase e espelha em todas as (atuais) 5 lojas de forma simultânea.
+- [x] Site principal com espelhamento automático em outros tenants (Lojas de Pokémon: fire, water, grass, ghost e ice) a partir da mesma aplicação.
+- [x] Melhorias de SEO e otimizações para compartilhamento em redes sociais.
+- [x] Busca de Pokémons a partir de 2 caracteres, para evitar consumo excessivo de memória da aplicação.
+- [x] Código passando em todos quesitos do NG LINT.
+- [x] Integração com Google Tag Manager/Google Analytics em eventos front-end, que observa todos os eventos da aplicação, armazenando-os em um Data Layer em cada uma das lojas e gera relatórios customizados delas, relacionados aos acessos e interações dos usuários na aplicação.
+- [x] Cores das lojas relacionadas aos elementos dos tipos dos Pokémons.
+- [x] Carregamento por demanda de itens na tela da Loja.
+- [x] Utilização de API de imagens de Pokémon para renderizar imagens de maior qualidade nos cards.
+- [x] Notificação no ícone do carrinho de compras, localizado no menu superior, para indicar quantos itens o usuário já adicionou.
+- [x] Menu superior listando todas 5 lojas de Pokémon disponíveis.
+- [x] Página de carrinho de compras com detalhamento dos itens adicionados e função de limpar carrinho e/ou remover itens únicos.
+- [x] Tratativas para cenários sem resultados (filtro de Pokémons e carrinho vazio).
+- [x] Carregamento com preloader dos cards da loja.
+- [x] Gestão de features por tenant. Possibilidade de adicionar e/ou remover uma determinada feature para um cliente em específico (uma loja de um tipo de Pokémon, por exemplo, não ter determinada funcionalidade).
+- [x] Facilidade de implantação de novos tenants (criar novas lojas de tipos de Pokémon a partir de passos simples).
+
+
+
+## Backlog de melhorias
+
+Durante o desenvolvimento, foram reconhecidas e listadas algumas melhorias pontuais a serem feitas no projeto. 
+Todos os itens estão cadastrados em um quadro público no Trello, que pode ser visualizado no seguinte endereço:
+https://trello.com/b/JokjdpJt/poke-shop-b2wdigital-kanban
+
+- [x] Modelagem de README com detalhamento da arquitetura white label.
+- [ ] Tutorial instalação local e criação de tenant
+- [x] Organização do Trello
+
+
+- [ ] Feedback ao usuário ao clicar em adicionar itens ao carrinho (botão com um 'adicionado'?).
+- [ ] Adicionar a somatória de valores no carrinho.
+- [ ] Carrinho de compras lateral, na direita da loja, aparecendo apenas após adicionar itens.
+
+- [ ] Cashback dinâmico na modal de finalização
+- [ ] Teste de funcionalidade desativada para algum tenant?
+
+- [ ] Ajustes mobile
+- [ ] Revisar ALT e semânticas de código
+- [ ] Modal de cookie consent, aplicando as regras da LGPD.
+- [ ] Teste de layout de Black Friday/Liquidação Pokémon.
+- [ ] Icones nos menus?
+
+
+## Bônus
+- [ ] Loja ser acessível para pessoas que utilizaram leitores de tela.
+- [ ] Testes E2E/UI automatizados parata be garantir que suas funcionalidades estão funcionando corretamente.
+- [ ] Loja ser um PWA completo com aviso de AHS.
+- [ ] Ter nota 100 no lighthouse.
+- [x] Uilizar CI/CD para deploy das lojas.
