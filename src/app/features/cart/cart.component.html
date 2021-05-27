@@ -23,6 +23,13 @@
                         <td>{{ item.price }} Poke Coins</td>
                         <td><button type="button" class="btn btn--text" (click)="removeFromCart(item)" gaEvent gaCategory="Carrinho de compras" gaLabel="Pokemon {{item.name}} removido do carrinho de compras"><span>Remover</span></button></td>
                     </tr>
+                    <tr>
+                        <td colspan="5" class="cart-total">
+                            <div>
+                                <p>Total: <span class="total-price">{{getTotalPrice}}</span> <img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda"> <span> Poke Coins!</span></p>                                 
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="cart-actions">

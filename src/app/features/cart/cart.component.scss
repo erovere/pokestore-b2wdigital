@@ -49,6 +49,37 @@ section.cart{
             display: block;
             margin: 0 auto;
         }
+        tr{
+            td.cart-total{
+                background-color: $tertiary-color;
+                text-align: right;
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    p{
+                        display: block;
+                        font-size: 20px;
+                        font-family: 'Nunito Sans';
+                    }
+                    .pokecoin{
+                        width: 30px;
+                        margin-left: 5px;
+                        height: 30px;
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    span{
+                        font-size: 16px;
+                        &.total-price{
+                            margin-left: 5px;
+                            font-size: 20px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
     }
     .cart-actions{
         display: flex;

@@ -34,6 +34,16 @@ export class CartService {
         return this.items;
     }
 
+    getTotalItems() {
+        return this.items.reduce(function(prev, cur) { return prev + cur.amount; }, 0);
+    }
+
+    getTotalPrice() {
+        return this.items.reduce(function(prev, cur) { 
+            return prev + (cur.price * cur.amount); 
+        }, 0);
+    }
+
     removeFromCart(product: Product) {
         const selectedItem = this.items.findIndex(item => item.name === product.name);
 

@@ -3,7 +3,7 @@
 
 :host {
     .content_wrapper {
-        padding: 20px;
+        padding: 30px 20px;
         section.success_screen {
             @include for-tablet-landscape-up {
                 max-width: 750px;
@@ -21,7 +21,7 @@
                 .cashback_message {
                     justify-content: center !important;
                     margin: 30px 0;
-                }                
+                }
             }
             img.success_image {
                 display: block;
@@ -56,11 +56,13 @@
             }
             .cashback_box {
                 border: 1px solid #c7c8d9;
-                background: var(--tertiary-color);
+                background: #f1ffe5;
                 border-radius: 10px;
-                padding: 12px 15px;
-                margin: 30px 0;
+                padding: 12px 25px;
                 font-weight: bold;
+                text-align: center;
+                max-width: 500px;
+                margin: 30px auto;
                 .cashback_message {
                     display: flex;
                     width: 100%;
@@ -74,12 +76,108 @@
                         font-size: 20px;
                         margin-bottom: 0;
                     }
+                    .pokecoin {
+                        width: 25px;
+                        margin-left: 0px;
+                        height: 25px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-bottom: 3px;
+                    }
                 }
             }
-            .btn--leave-cart{
+            .btn--leave-cart {
                 max-width: 300px;
                 margin: 0 auto;
                 padding: 15px;
+            }
+        }
+        .pokemon-caught {
+            .pokeball {
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background: #fff;
+                border: 5px solid #000;
+                border-radius: 50%;
+                overflow: hidden;
+                // box-shadow: inset -10px 10px 0 10px #ccc;
+                box-shadow: inset -5px 1px 0 4px #ccc;
+                animation: fall 0.25s ease-in-out, shake 1.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 3;
+                margin: 0 auto;
+                animation-delay: 300ms;
+            }
+            .pokeball::before,
+            .pokeball::after {
+                content: "";
+                position: absolute;
+            }
+            .pokeball::before {
+                background: red;
+                width: 100%;
+                height: 40%;
+            }
+            .pokeball::after {
+                top: calc(50% - 10px);
+                width: 100%;
+                height: 5px;
+                background: #000;
+            }
+            .pokeball__button {
+                position: absolute;
+                top: calc(50% - 15px);
+                left: calc(50% - 15px);
+                width: 30px;
+                height: 30px;
+                background: #7f8c8d;
+                border: 5px solid #fff;
+                border-radius: 50%;
+                z-index: 10;
+                box-shadow: 0 0 0 5px black;
+                animation: blink 0.5s alternate 7;
+            }
+            /* Animation */
+            @keyframes blink {
+                from {
+                    background: #eee;
+                }
+                to {
+                    background: #e74c3c;
+                }
+            }
+            @keyframes shake {
+                0% {
+                    transform: translate(0, 0) rotate(0);
+                }
+                20% {
+                    transform: translate(-10px, 0) rotate(-20deg);
+                }
+                30% {
+                    transform: translate(10px, 0) rotate(20deg);
+                }
+                50% {
+                    transform: translate(-10px, 0) rotate(-10deg);
+                }
+                60% {
+                    transform: translate(10px, 0) rotate(10deg);
+                }
+                100% {
+                    transform: translate(0, 0) rotate(0);
+                }
+            }
+            @keyframes fall {
+                0% {
+                    top: -200px;
+                }
+                60% {
+                    top: 0;
+                }
+                80% {
+                    top: -20px;
+                }
+                100% {
+                    top: 0;
+                }
             }
         }
     }

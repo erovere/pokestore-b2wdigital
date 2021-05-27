@@ -9,7 +9,7 @@ import { ConfigurationService, CartService, AnalyticsService} from '@app/core/se
 export class NavComponent implements OnInit {
     logoUrl: string;
     pokemonFamily: string;
-    items = this.cartService.getItems();
+    totalItems = this.cartService.getTotalItems();
 
     constructor(
         private configurationService: ConfigurationService,
@@ -23,5 +23,9 @@ export class NavComponent implements OnInit {
             this.logoUrl = appConfig.logoImageUrl;
             this.pokemonFamily = appConfig.name;
         }
+    }
+    get getTotalItems(): number {
+        this.totalItems = this.cartService.getTotalItems();
+        return this.totalItems;
     }
 }

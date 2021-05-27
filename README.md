@@ -127,7 +127,7 @@ As dependências do projeto estão listadas no arquivo package.json e precisam s
 - [x] Carregamento com preloader dos cards da loja.
 - [x] Gestão de features por tenant. Possibilidade de adicionar e/ou remover uma determinada feature para um cliente em específico (uma loja de um tipo de Pokémon, por exemplo, não ter determinada funcionalidade).
 - [x] Facilidade de implantação de novos tenants (criar novas lojas de tipos de Pokémon a partir de passos simples).
-
+- [x] Animações com CSS/Keyframes (Pokebola do menu e Pokebola de Pokémon capturado na modal de sucesso do carrinho).
 
 
 ## Backlog de melhorias

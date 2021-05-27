@@ -1,16 +1,22 @@
 <div class="content_wrapper">
-    <section class="success_screen">
-        <img class="success_image" src="./assets/images/success-checked.gif" alt="Sucesso!" />
+    <section class="success_screen">       
         <p class="main_title">
             <span>Parabéns </span>
             <strong>Você realizou compra dos seus novos Pokémons!</strong>
         </p>
 
+        <div class="pokemon-caught">
+            <div class="pokeball">
+                <div class="pokeball__button"></div>
+              </div>
+        </div>
+        
         <div class="content_info">
             <div class="cashback_box">
                 <div class="cashback_message">
-                    <p>Nessa compra você garantiu um cashback de 30 Poke Coins pelo AME!</p>
+                    <p>Nessa compra de {{totalPrice}} <img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda"> você garantiu um <u>cashback</u> de {{cashback}} <img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda"> pelo AME!</p>
                 </div>
+                <p>Verifique em sua conta!<br>Agradecemos por comprar conosco.</p>
             </div>           
             <button type="button" class="btn btn--primary btn--leave-cart" (click)="clearCart()">Finalizar</button>
         </div>

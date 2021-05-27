@@ -33,8 +33,8 @@
         <div class="cart-nav">
             <a class="cart-link" routerLink="cart" title="Carrinho de compras" gaEvent gaCategory="Menu" gaLabel="Abertura do carrinho de compras">  
                 <i class="material-icons">shopping_cart</i>
-                <div class="cart-counter" *ngIf="items.length > 0">
-                    <span>{{items.length}}</span>
+                <div class="cart-counter">
+                    <span>{{getTotalItems}}</span>
                 </div>
             </a>
         </div>        

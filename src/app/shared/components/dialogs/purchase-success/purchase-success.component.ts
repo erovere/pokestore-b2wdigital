@@ -12,7 +12,8 @@ import { AnalyticsService, CartService } from '@app/core/services';
 export class PurchaseSuccessComponent implements OnInit {
 
     public items: Product[] = [];
-    public itemsQty: number;
+    public totalPrice: number;
+    public cashback: number;
 
     constructor(
         public router: Router,
@@ -23,7 +24,8 @@ export class PurchaseSuccessComponent implements OnInit {
 
     ngOnInit(): void {
         this.items = this.data.items,
-        this.itemsQty = this.data.itemsQty        
+        this.totalPrice = this.data.totalPrice,
+        this.cashback = this.data.cashback  
     }
     clearCart(): void {
         this.dialog.closeAll();

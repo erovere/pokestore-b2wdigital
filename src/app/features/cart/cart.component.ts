@@ -13,6 +13,7 @@ import { PurchaseSuccessComponent } from '@app/shared/components/dialogs/purchas
 })
 export class CartComponent implements OnInit {
     items = this.cartService.getItems();
+    totalPrice  = this.cartService.getTotalPrice();
 
     constructor(
         private cartService: CartService,
@@ -22,7 +23,7 @@ export class CartComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        console.log(">> Itens no carrinho: ", this.items);
+        // console.log(">> Itens no carrinho: ", this.items);
     }
 
     public handleBack = () => this.location.back();
@@ -39,6 +40,11 @@ export class CartComponent implements OnInit {
         this.cartService.clearCart();
     }
 
+    get getTotalPrice(): number {
+        this.totalPrice = this.cartService.getTotalPrice();
+        return this.totalPrice;
+    }
+
     public completePurchase(): void {
         this.dialog.open(PurchaseSuccessComponent, {
             width: '100%',
@@ -47,7 +53,8 @@ export class CartComponent implements OnInit {
             panelClass: 'pokestore_dialog_layout',
             data: {
                 items: this.items,
-                itemsQty: this.items.length
+                totalPrice: this.getTotalPrice,
+                cashback: (((100 / 10) * this.getTotalPrice) / 100)
             }
         });
 
