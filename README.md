@@ -12,9 +12,9 @@ O projeto foi desenvolvido dentro do Processo Seletivo para a vaga de Front-end 
 * [Builds e testes](#builds-e-testes)
 * [Releases (CD)](#releases-(cd))
 * [Desafio Solicitado](#desafio-solicitado)
+* [Bônus sugerido](#bonus)
 * [Extras](#extras)
 * [Backlog de melhorias](#backlog-de-melhorias)
-* [Bônus](#bonus)
 
 ## Responsáveis
 * **Desenvolvedor**: Eduardo Roveré <eduardo.rovere@gmail.com>
@@ -92,7 +92,7 @@ As dependências do projeto estão listadas no arquivo package.json e precisam s
 - [x] Catálogo de produtos
 - [ ] Carrinho lateral
 - [x] Resumo do carrinho
-- [x] 5 lojas com estilos e tipos diferentes de Pokémon
+- [x] 05 lojas com estilos e tipos diferentes de Pokémon
 - [x] Barra de busca para filtrar os Pokémon
 - [x] Botão de finalizar compra, reiniciando o processo de compra
 - [x] Modal de obrigado ao finalizar compra
@@ -100,6 +100,12 @@ As dependências do projeto estão listadas no arquivo package.json e precisam s
 - [x] Colocá-lo online em alguma url pública para que as pessoas consigam utilizar a loja, afinal como vamos vender Pokémon se não nos acharem?
 - [x] Uma página com mais detalhes do Pokémon, tendo informações como os tipos, movimentos, pontos fracos e pontos fortes. Dessa forma o usuário poderá navegar para essa página e adicionar o Pokémon no carrinho ou voltar para o catálogo.
 
+## Bônus sugerido
+- [ ] Loja ser acessível para pessoas que utilizaram leitores de tela.
+- [ ] Testes E2E/UI automatizados parata be garantir que suas funcionalidades estão funcionando corretamente.
+- [x] Loja ser um PWA completo com aviso de AHS.
+- [ ] Ter nota 100 no lighthouse. (Estamos com nota **97** em Performance, **92** em Acessibilidade, **93** em melhores práticas e **75** em SEO. Iremos melhorar isso!)
+- [x] Uilizar CI/CD para deploy das lojas.
 
 ## Extras
 
@@ -129,28 +135,3 @@ As dependências do projeto estão listadas no arquivo package.json e precisam s
 Durante o desenvolvimento, foram reconhecidas e listadas algumas melhorias pontuais a serem feitas no projeto. 
 Todos os itens estão cadastrados em um quadro público no Trello, que pode ser visualizado no seguinte endereço:
 https://trello.com/b/JokjdpJt/poke-shop-b2wdigital-kanban
-
-- [x] Modelagem de README com detalhamento da arquitetura white label.
-- [x] Tutorial instalação local e criação de tenant
-- [x] Organização do Trello
-
-- [ ] Feedback ao usuário ao clicar em adicionar itens ao carrinho (botão com um 'adicionado'?).
-- [ ] Adicionar a somatória de valores no carrinho.
-- [ ] Carrinho de compras lateral, na direita da loja, aparecendo apenas após adicionar itens.
-
-- [ ] Cashback dinâmico na modal de finalização
-- [ ] Teste de funcionalidade desativada para algum tenant?
-
-- [ ] Ajustes mobile
-- [ ] Revisar ALT e semânticas de código
-- [ ] Modal de cookie consent, aplicando as regras da LGPD.
-- [ ] Teste de layout de Black Friday/Liquidação Pokémon.
-- [ ] Icones nos menus?
-
-
-## Bônus
-- [ ] Loja ser acessível para pessoas que utilizaram leitores de tela.
-- [ ] Testes E2E/UI automatizados parata be garantir que suas funcionalidades estão funcionando corretamente.
-- [ ] Loja ser um PWA completo com aviso de AHS.
-- [ ] Ter nota 100 no lighthouse.
-- [x] Uilizar CI/CD para deploy das lojas.
