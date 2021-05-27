@@ -33,6 +33,33 @@
             }
         }
     }
+    &--secondary {
+        background-color: white;
+        border: 1px solid $secondary-color;
+        color: $secondary-color;
+        font-weight: 700;
+        width: 85%;
+        &:hover:not(:disabled) {
+            color: white;
+        }
+        &:disabled {
+            opacity: 0.5;
+            background: transparent;
+            color: #9BA5AE;
+            border: 1px solid #9BA5AE;
+            cursor: not-allowed;
+        }
+        &.active{
+            color: white;
+            background-color: $secondary-color;
+        }
+        @include for-tablet-landscape-up{
+            &:hover:not(:disabled) {
+                color: white;
+                background-color: $secondary-color;
+            }
+        }
+    }
     &--back {
         background-color: transparent;        
         width: 100px;

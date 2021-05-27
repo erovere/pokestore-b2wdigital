@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Product } from '@app/core/models';
-import { ApiService, ConfigurationService, CartService } from '@app/core/services';
+import { ApiService, ConfigurationService, CartService, AnalyticsService } from '@app/core/services';
 import { filter, first, timeout } from 'rxjs/operators';
 
 @Component({
@@ -20,11 +20,14 @@ export class StoreComponent implements OnInit{
     public QTD_POKEMONS_TO_SHOW = 21;
     public isCartEmpty = true;
     public filterParameter = '';
+    cartItems = this.cartService.getItems();
+
 
     constructor(
         private configurationService: ConfigurationService,
         private api: ApiService,
         private fb: FormBuilder,
+        private analytics: AnalyticsService,
         private cartService: CartService
     ) { }
 
@@ -40,6 +43,22 @@ export class StoreComponent implements OnInit{
         this.fetchPokemonsByType();
     }
 
+    public getItemStatusByCart(pokemonName: string): string {
+        const found = this.cartItems.findIndex(item => item.name === pokemonName);       
+        if(found > -1){
+            return `Pokemon adicionado ${this.cartItems[found].amount}x`;
+        } else{
+            return "Adicionar pokemon";
+        }
+    }
+
+    public getButtonStatusByCart(pokemonName: string): string {
+        const found = this.cartItems.findIndex(item => item.name === pokemonName);       
+        if(found > -1){
+            return 'active';
+        }
+    }
+
     private fetchPokemonsByType(): void {
         this.api.get(`type/${this.selectedPokemonType}`)
             .pipe(first())
@@ -48,9 +67,17 @@ export class StoreComponent implements OnInit{
                     this.pokemonList = response.pokemon;
                     this.maxRecordsToShow = this.pokemonList.length;
                     this.mountPokemonsToStore(0);
+                    this.analytics.pushAction({
+                        gacategoria: `API`,
+                        garotulo: `Sucesso no carregamento da API de Pokemons.`
+                    });
                 },
                 (error) => {
                     if (error.customMessages) {
+                        this.analytics.pushAction({
+                            gacategoria: `API`,
+                            garotulo: `Erro ao carregar API de Pokemons.`
+                        });
                         console.log('Erro ao buscar pokemons: ', error);
                     }
                 }

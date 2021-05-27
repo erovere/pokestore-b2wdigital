@@ -16,7 +16,7 @@
                         <p><img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda"> {{getPokemonIdFromURL(pokemon.pokemon.url)}} <span>Poke moedas</span></p>
                     </div>
                     <div class="product-actions">
-                        <button type="button" class="btn btn--primary" (click)="addToCart(pokemon.pokemon)" gaEvent gaCategory="Loja" gaLabel="Pokemon {{pokemon.pokemon.name}} adicionado ao carrinho">Adicionar ao carrinho</button>
+                        <button type="button" class="btn btn--secondary" [class]="getButtonStatusByCart(pokemon.pokemon.name)" (click)="addToCart(pokemon.pokemon)" gaEvent gaCategory="Loja" gaLabel="Pokemon {{pokemon.pokemon.name}} adicionado ao carrinho">{{getItemStatusByCart(pokemon.pokemon.name)}}</button>
                     </div>
                 </div>
             </div>
