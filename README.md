@@ -25,12 +25,12 @@ O projeto foi desenvolvido dentro do Processo Seletivo para a vaga de Front-end 
 
 1. Após baixar este projeto na sua máquina, rode um `npm install` para instalar todas as dependências do projeto.
 2. Para simular os estilos das múltiplas lojas de tipos de Pokémon e carregar os dados white label de cada uma delas, orienta-se rodar o servidor local em diferentes portas. No arquivo `host-to-tenant-map.ts` você encontrará os apontamentos, relacionando as URLs com os tenantIDs definidos.
-Para visualizar a loja Pokémon "Fire" localmente, rode: `npm run start-fire`. A título de conhecimento, a porta localhost:4200 foi definida para esta loja por padrão. Então se você rodar o servidor normalmente, sempre abrirá na loja de Fogo.
+* Para visualizar a loja Pokémon "Fire" localmente, rode: `npm run start-fire`. A título de conhecimento, a porta localhost:4200 foi definida para esta loja por padrão. Então se você rodar o servidor normalmente, sempre abrirá na loja de Fogo.
 
-Para visualizar a loja Pokémon "Water" localmente, rode: `npm run start-water`.
-Para visualizar a loja Pokémon "Grass" localmente, rode: `npm run start-grass`.
-Para visualizar a loja Pokémon "Ghost" localmente, rode: `npm run start-ghost`.
-Para visualizar a loja Pokémon "Ice" localmente, rode: `npm run start-ice`.
+* Para visualizar a loja Pokémon "Water" localmente, rode: `npm run start-water`.
+* Para visualizar a loja Pokémon "Grass" localmente, rode: `npm run start-grass`.
+* Para visualizar a loja Pokémon "Ghost" localmente, rode: `npm run start-ghost`.
+* Para visualizar a loja Pokémon "Ice" localmente, rode: `npm run start-ice`.
 
 Obs: O sistema possui um `configuration.service.ts`, que traz as configurações de cada loja do projeto. Primeiro tentamos captar as configurações de tema da API definida. Caso a API esteja indisponível, existe uma callback que puxa os dados do `default-configuration.ts`.
 
@@ -45,13 +45,12 @@ Rode o comando padrão da CLI do Angular `ng generate component component-name` 
 As dependências do projeto estão listadas no arquivo package.json e precisam ser instaladas com o comando `npm install`.
 
 ## APIs
-* gateway-b2u
-  * URLs
-    * Prod: (https://gateway-b2u.wizsolucoes.com.br/api/v1/wizteliga)
-    * Hml: (https://gateway-canalremoto-hml.azurewebsites.net/api/v1/wizteliga)
-  * Swagger
-    
-  * Configurações White Label: Elas se encontram no wizcorporativo-appconfig, dentro do Portal Azure da Wiz.   
+* PokeApi
+  * https://pokeapi.co/    
+
+* A API de dados de cada loja está sendo simulada através do json-server da Typicode:
+  * https://my-json-server.typicode.com/erovere/poketenantconfig
+
 
 ## Build e Testes
 * Comando para lint:
@@ -85,9 +84,6 @@ As dependências do projeto estão listadas no arquivo package.json e precisam s
 | Grass Pokémon | https://grass-pokestore.web.app/ |
 | Ghost Pokémon | https://ghost-pokestore.web.app/ |
 | Ice Pokémon   | https://ice-pokestore.web.app/   |
-
-A API de dados de cada loja está sendo simulada através do json-server da Typicode:
-* https://my-json-server.typicode.com/erovere/poketenantconfig
 
 
 
@@ -135,9 +131,8 @@ Todos os itens estão cadastrados em um quadro público no Trello, que pode ser 
 https://trello.com/b/JokjdpJt/poke-shop-b2wdigital-kanban
 
 - [x] Modelagem de README com detalhamento da arquitetura white label.
-- [ ] Tutorial instalação local e criação de tenant
+- [x] Tutorial instalação local e criação de tenant
 - [x] Organização do Trello
-
 
 - [ ] Feedback ao usuário ao clicar em adicionar itens ao carrinho (botão com um 'adicionado'?).
 - [ ] Adicionar a somatória de valores no carrinho.
