@@ -40,8 +40,7 @@
                     </li>
                 </ul>                
             </div>            
-            <button type="button" class="btn btn--primary btn-add-to-cart">Adicionar ao carrinho</button>
-            <!-- <button type="button" class="btn btn--primary" (click)="addToCart(pokemonDetails.id)">Adicionar ao carrinho</button> -->
+            <button type="button" class="btn btn--primary btn-add-to-cart" (click)="addToCart(pokemonDetails)" gaEvent gaCategory="Detalhamento" gaLabel="Pokemon {{pokemonDetails.name}} adicionado ao carrinho">Adicionar ao carrinho</button>
         </div>    
     </section>
 </div>

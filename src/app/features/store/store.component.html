@@ -8,7 +8,7 @@
             </div>
             <div class="product-container" *ngIf="pokemonList; else loadingPokemons">
                 <div class="product-card" *ngFor="let pokemon of pokemonListFiltered; let i = index">
-                    <div class="product-image" [routerLink]="['/pokemon/details/', getPokemonIdFromURL(pokemon.pokemon.url)]">
+                    <div class="product-image" [routerLink]="['/pokemon/details/', getPokemonIdFromURL(pokemon.pokemon.url)]" gaEvent gaCategory="Loja" gaLabel="Visualizar detalhes do pokemon {{pokemon.pokemon.name}}">
                         <img loading="lazy" [src]='"https://pokeres.bastionbot.org/images/pokemon/" + getPokemonIdFromURL(pokemon.pokemon.url) + ".png"' alt="Imagem do pokemon {{pokemon.pokemon.name}}">
                     </div>
                     <div class="product-info">
@@ -16,11 +16,11 @@
                         <p><img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda"> {{getPokemonIdFromURL(pokemon.pokemon.url)}} <span>Poke moedas</span></p>
                     </div>
                     <div class="product-actions">
-                        <button type="button" class="btn btn--primary" (click)="addToCart(getPokemonIdFromURL(pokemon.pokemon.url)); scroll(store)">Adicionar ao carrinho</button>
+                        <button type="button" class="btn btn--primary" (click)="addToCart(pokemon.pokemon)" gaEvent gaCategory="Loja" gaLabel="Pokemon {{pokemon.pokemon.name}} adicionado ao carrinho">Adicionar ao carrinho</button>
                     </div>
                 </div>
             </div>
-            <button *ngIf="(pokemonListFiltered.length > 0) && (maxRecordsToShow > recordsRendered) && (filterParameter.length === 0)" type="button" class="btn btn--primary btn-show-more-records" (click)="mountPokemonsToStore(12)">Mostrar mais</button>
+            <button *ngIf="(pokemonListFiltered.length > 0) && (maxRecordsToShow > recordsRendered) && (filterParameter.length === 0)" type="button" class="btn btn--primary btn-show-more-records" (click)="mountPokemonsToStore(12)" gaEvent gaCategory="Loja" gaLabel="Carregar mais itens da loja">Mostrar mais</button>
             
             <ng-template #loadingPokemons>
                 <div class="loading-grid">

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from '@app/core/services';
+import { ApiService, CartService } from '@app/core/services';
 import { first } from 'rxjs/operators';
 import { Location } from '@angular/common';
+import { Product } from '@app/core/models';
 
 
 @Component({
@@ -15,11 +16,13 @@ export class PokemonComponent implements OnInit {
     public pokemonId: number;
     public pokemonIdsub: any;
     public pokemonDetails;
+    // items = this.cartService.getItems();
 
     constructor(
         private api: ApiService,
         private location: Location,
         private route: ActivatedRoute,
+        private cartService: CartService
     ) { }
 
     ngOnInit(): void {
@@ -66,5 +69,20 @@ export class PokemonComponent implements OnInit {
     get getPokemonSprites(): any {
         const key = 'front_default';
         return this.pokemonDetails.sprites[key];
+    }
+
+    public getPokemonIdFromURL(url: string): number {
+        return Number(url.split('/')[6]);
+    }
+
+    public addToCart() {
+        const productToAdd = {
+            id: this.pokemonId, 
+            name: this.pokemonDetails.name,
+            url: this.pokemonDetails.url,
+            price: this.pokemonId,
+            amount: 1
+        }
+        this.cartService.addToCart(productToAdd);
     }
 }

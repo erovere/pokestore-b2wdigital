@@ -1,7 +1,7 @@
 <header class="main-header">
     <div class="content-wrapper">
         <div class="logo">
-            <a routerLink="home">         
+            <a routerLink="home" gaEvent gaCategory="Header" gaLabel="Pokeball home">
                 <div class="pokeball"></div>
             </a>
             <div>
@@ -14,22 +14,29 @@
         <nav>
             <ul>
                 <li>
-                    <a href="https://fire-pokestore.web.app/">Fire Store</a>
+                    <a href="https://fire-pokestore.web.app/" title="Loja de Pokemons de fogo"  gaEvent gaCategory="Menu" gaLabel="Fire Store">Fire Store</a>
                 </li>
                 <li>
-                    <a href="https://water-pokestore.web.app/">Water Store</a>
+                    <a href="https://water-pokestore.web.app/" title="Loja de Pokemons de água">Water Store</a>
                 </li>
                 <li>
-                    <a href="https://grass-pokestore.web.app/">Grass Store</a>
+                    <a href="https://grass-pokestore.web.app/" title="Loja de Pokemons de grama">Grass Store</a>
                 </li>
                 <li>
-                    <a href="https://ghost-pokestore.web.app/">Ghost Store</a>
+                    <a href="https://ghost-pokestore.web.app/" title="Loja de Pokemons fantasma">Ghost Store</a>
                 </li>
                 <li>
-                    <a href="https://ice-pokestore.web.app/">Ice Store</a>
+                    <a href="https://ice-pokestore.web.app/" title="Loja de Pokemons de gelo">Ice Store</a>
                 </li>
             </ul>
         </nav>
-        
+        <div class="cart-nav">
+            <a class="cart-link" routerLink="cart" title="Carrinho de compras" gaEvent gaCategory="Menu" gaLabel="Abertura do carrinho de compras">  
+                <i class="material-icons">shopping_cart</i>
+                <div class="cart-counter" *ngIf="items.length > 0">
+                    <span>{{items.length}}</span>
+                </div>
+            </a>
+        </div>        
     </div>
 </header>

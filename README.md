@@ -48,11 +48,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * Cores das lojas
 * Icones nos menus
 * Revisar ALT e semanticas
+* Feedback ao usuário ao clicar em adicionar ao carrinho
 
 ## Verificar: ##
 PWA
 Lighthouse
-
+Somatória de valores no carrinho
 
 **JSON SERVER**
 https://my-json-server.typicode.com/erovere/poketenantconfig

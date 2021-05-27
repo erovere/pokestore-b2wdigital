@@ -13,6 +13,11 @@ const routes: Routes = [
             import('./features/pokemon/pokemon.module').then((m) => m.PokemonModule)
     },
     {
+        path: 'cart',
+        loadChildren: () =>
+            import('./features/cart/cart.module').then((m) => m.CartModule)
+    },
+    {
         path: '**',
         redirectTo: '',
     },

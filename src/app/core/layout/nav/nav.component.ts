@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigurationService } from '@app/core/services';
+import { ConfigurationService, CartService, AnalyticsService} from '@app/core/services';
 
 @Component({
     selector: 'app-nav',
@@ -9,9 +9,12 @@ import { ConfigurationService } from '@app/core/services';
 export class NavComponent implements OnInit {
     logoUrl: string;
     pokemonFamily: string;
+    items = this.cartService.getItems();
 
     constructor(
-        private configurationService: ConfigurationService
+        private configurationService: ConfigurationService,
+        private cartService: CartService,
+        private analytics: AnalyticsService
     ) { }
 
     ngOnInit(): void {

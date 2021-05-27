@@ -1,5 +1,7 @@
 // 1. Config files
 // ==========================================================================
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
 @import "./config/variables";
 @import "./mixins/all";
 
@@ -15,8 +17,7 @@
 // ==========================================================================
 @import "~placeholder-loading/src/scss/placeholder-loading";
 @import "./elements/layout/buttons";
-@import '~material-design-icons/iconfont/material-icons.css';
-
+@import "~material-design-icons/iconfont/material-icons.css";
 
 * {
     margin: 0;
@@ -25,22 +26,21 @@
     box-sizing: border-box;
 }
 
-
 body {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     overflow-y: overlay;
 }
 
-.desktop_only{
-    display: block!important;
+.desktop_only {
+    display: block !important;
     @include for-phone-only {
-        display: none!important;
+        display: none !important;
     }
 }
-.mobile_only{
-    display: none!important;
+.mobile_only {
+    display: none !important;
     @include for-phone-only {
-        display: block!important;
+        display: block !important;
     }
 }
 
@@ -52,7 +52,6 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
-
 
 .loading {
     position: fixed;
@@ -74,8 +73,40 @@ body {
         animation: spin 2s linear infinite;
     }
 }
+.pokestore_dialog_layout {
+    transform: translateY(200%);
+    animation: slideUntilHeader 0.4s forwards 0s ease-out;
+    .mat-dialog-container {
+        border-top-left-radius: 30px !important;
+        border-top-right-radius: 30px !important;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+}
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideUntilHeader {
+    0% {
+    }
+    100% {
+        transform: translateY(130px);
+    }
+}
+
+@media screen and (max-height: 640px) {
+    @keyframes slideUntilHeader {
+        0% {
+        }
+        100% {
+            transform: translateY(30px);
+        }
+    }
 }

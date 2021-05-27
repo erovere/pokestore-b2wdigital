@@ -1,0 +1,90 @@
+@import '../../../scss/config/variables';
+@import '../../../scss/mixins/all';
+
+.cart-main-content{
+    padding: 30px 20px;
+    h2{
+        font-size: 2rem;
+        color: #373736;
+    }
+}
+
+section.cart{
+    padding: 10px 0;
+    .cart-table{
+        width: 100%;
+        border-collapse: collapse;
+        margin: 35px 0 20px;
+        font-size: 1rem;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        thead {
+            tr{
+                background-color: var(--secondary-color);
+                color: #ffffff;
+                text-align: left;
+            }
+        }
+        th, td{
+            padding: 12px 15px;
+        }
+        tbody{
+            tr{
+                border-bottom: 1px solid #dddddd;
+                &:nth-of-type(even){
+                    background-color: #f3f3f3;
+                }
+                &:last-of-type{
+                    border-bottom: 2px solid var(--secondary-color);
+                }
+                &.active-row{
+                    font-weight: bold;
+                    color: var(--secondary-color);
+                }
+            }
+        }
+        img{
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .cart-actions{
+        display: flex;
+        justify-content: space-between;
+        div{
+            display: flex;
+            justify-content: space-between;
+            .btn--complete-purchase{
+                min-width: 200px;
+                max-width: 300px;
+            }
+            .btn--clear-cart{
+                margin-right: 40px;
+                min-width: 200px;
+            }
+        }
+    }
+}
+.empty-cart{
+    p{
+        padding: 40px 0;
+        text-align: center;
+    }
+    img{
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+
+@include for-tablet-landscape-down{
+    .cart-main-content{
+        h2{
+            font-size: 1.6rem;
+        }
+    }
+}

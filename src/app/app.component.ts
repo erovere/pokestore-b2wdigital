@@ -25,8 +25,8 @@ export class AppComponent implements OnInit {
 
     private configureApplication(): void {
         this.isLoadingConfiguration = true;
-        const url = new URL(window.location.href);
-        this.tenantId = hostTenantMap[url.host];
+        const currentTenant = new URL(window.location.href).host.replace(/(.*)-pokestore.*/, '$1');
+        this.tenantId = hostTenantMap[currentTenant];
         this.configurationService.disableCache();
         // this.configurationService.enableCache();
         this.loadConfiguration().subscribe((data: any) => {

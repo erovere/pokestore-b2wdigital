@@ -7,3 +7,4 @@ export * from './configuration/cache/configuration-cache.service';
 export * from './configuration/in-memory/configuration-in-memory.service';
 export * from './theming/theming.service';
 export * from './utils/util.service';
+export * from './cart/cart.service';

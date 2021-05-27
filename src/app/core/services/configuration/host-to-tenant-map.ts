@@ -9,9 +9,9 @@ export default {
     'water-pokestore.web.app': 'water',
     'grass-pokestore.web.app': 'grass',
     'ice-pokestore.web.app'  : 'ice',
-    'ghost-pokestore.firebaseapp.com': 'ghost',
-    'fire-pokestore.firebaseapp.com' : 'fire',
-    'water-pokestore.firebaseapp.com': 'water',
-    'grass-pokestore.firebaseapp.com': 'grass',
-    'ice-pokestore.firebaseapp.com'  : 'ice'
+    'ghost': 'ghost',
+    'fire' : 'fire',
+    'water': 'water',
+    'grass': 'grass',
+    'ice'  : 'ice'
 };

@@ -1,0 +1,59 @@
+import { Component, OnInit } from '@angular/core';
+import { AnalyticsService, CartService } from '@app/core/services';
+import { Location } from '@angular/common';
+import { Product } from '@app/core/models';
+import { MatDialog } from '@angular/material/dialog';
+import { PurchaseSuccessComponent } from '@app/shared/components/dialogs/purchase-success/purchase-success.component';
+
+
+@Component({
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.scss']
+})
+export class CartComponent implements OnInit {
+    items = this.cartService.getItems();
+
+    constructor(
+        private cartService: CartService,
+        private location: Location,
+        private dialog: MatDialog,
+        private analytics: AnalyticsService
+    ) { }
+
+    ngOnInit(): void {
+        console.log(">> Itens no carrinho: ", this.items);
+    }
+
+    public handleBack = () => this.location.back();
+
+    public getPokemonIdFromURL(url: string): number {
+        return Number(url.split('/')[6]);
+    }
+
+    public removeFromCart(product: Product) {
+        this.cartService.removeFromCart(product);
+    }
+
+    public clearCart() {
+        this.cartService.clearCart();
+    }
+
+    public completePurchase(): void {
+        this.dialog.open(PurchaseSuccessComponent, {
+            width: '100%',
+            height: '100%',
+            disableClose: true,
+            panelClass: 'pokestore_dialog_layout',
+            data: {
+                items: this.items,
+                itemsQty: this.items.length
+            }
+        });
+
+        this.analytics.pushAction({
+            gacategoria: `Modal`,
+            garotulo: `Compra de ${this.items.length} itens finalizada.`
+        });
+    }
+}

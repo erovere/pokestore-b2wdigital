@@ -125,21 +125,21 @@ section.store{
         }
     }
 }
-.cart-with-items{
-    section.store{
-        max-width: 830px;
-    }
-    aside.cart{
-        display: flex!important;
-    }
-}
+// .cart-with-items{
+//     section.store{
+//         max-width: 830px;
+//     }
+//     aside.cart{
+//         display: flex!important;
+//     }
+// }
 aside.cart{
     padding: 10px;
     margin-bottom: 2.5rem;
     min-width: 270px;
-    max-height: 100vh;
+    height: max-content;
     text-align: center;
-    border: 2px solid #ddd;
+    border: 1px solid #ddd;
     flex: 1;
     display: flex;
     align-items: flex-start;

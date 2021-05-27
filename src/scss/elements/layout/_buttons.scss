@@ -49,4 +49,33 @@
             }
         }
     }
+    &--clear-cart {
+        background-color: transparent;        
+        width: 240px;
+        border: 1px solid #b7b7b7;
+        span{
+            display: inline-block;
+            margin-left: 5px;
+        }
+        @include for-tablet-landscape-up{
+            &:hover:not(:disabled) {
+                background: #ececec;
+            }
+        }
+    }
+    &--text {
+        font-size: 14px;
+        background-color: transparent;
+        border: 0;
+        display: block;
+        margin: 0 auto;
+        span{
+            text-decoration: underline;
+        }
+        &:hover{
+            span{
+                text-decoration: none;
+            }
+        }
+    }
 }

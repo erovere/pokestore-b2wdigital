@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ApiService, ConfigurationService } from '@app/core/services';
+import { Product } from '@app/core/models';
+import { ApiService, ConfigurationService, CartService } from '@app/core/services';
 import { filter, first, timeout } from 'rxjs/operators';
 
 @Component({
@@ -23,7 +24,8 @@ export class StoreComponent implements OnInit{
     constructor(
         private configurationService: ConfigurationService,
         private api: ApiService,
-        private fb: FormBuilder
+        private fb: FormBuilder,
+        private cartService: CartService
     ) { }
 
     ngOnInit(): void {
@@ -67,7 +69,6 @@ export class StoreComponent implements OnInit{
             });
             this.recordsRendered = (this.recordsRendered + showMoreRecords);
         }
-        console.log('POKEMON FILTRADOS: ', this.pokemonListFiltered);
     }
 
     public getPokemonIdFromURL(url: string): number {
@@ -78,9 +79,17 @@ export class StoreComponent implements OnInit{
         return !!this.features && this.features.includes(key);
     }
 
-    public addToCart(pokemonId: number): void {
+    public addToCart(product: Product) {
+        const productToAdd = {
+            id: this.getPokemonIdFromURL(product.url), 
+            name: product.name,
+            url: product.url,
+            price: this.getPokemonIdFromURL(product.url),
+            amount: 1
+        }
+
+        this.cartService.addToCart(productToAdd);
         this.isCartEmpty = false;
-        console.log('pokemon id selected: ', pokemonId);
     }
 
     public scroll(el: HTMLElement): void {

@@ -5,8 +5,6 @@ import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './layout/nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [MainLayoutComponent, NavComponent],
@@ -14,9 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatButtonModule,
+    HttpClientModule
   ],
   exports: [MainLayoutComponent],
 })

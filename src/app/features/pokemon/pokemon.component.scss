@@ -5,6 +5,7 @@
     position: relative;
     max-width: 1140px;
     margin: 0 auto;
+    padding: 30px 20px;
     width: 100%;
 }
 section.pokemon-details{
@@ -79,6 +80,10 @@ section.pokemon-details{
 }
 
 @include for-tablet-landscape-down{
+    .pokemon-main-content{
+        padding: 30px;
+    }
+
     section.pokemon-details{
         flex-direction: column;
         margin: 30px 0 50px;
