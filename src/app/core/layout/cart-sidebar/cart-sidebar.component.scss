@@ -127,9 +127,28 @@ aside.cart-sidebar{
                 }
             }
         }
+        .btn--continue-shopping{
+            margin: 20px auto;
+            width: 260px;
+            padding: 15px;
+            display: none;
+        }
         .btn--complete-purchase{
             margin: 0 auto;
             width: 260px;
+        }
+    }
+}
+
+@include for-tablet-landscape-down{
+    aside.cart-sidebar{
+        &.cart-opened{
+            transform: translate(50%);
+            right: 52%;
+            padding-bottom: 20px;
+        }
+        .btn--continue-shopping{
+            display: block!important;
         }
     }
 }

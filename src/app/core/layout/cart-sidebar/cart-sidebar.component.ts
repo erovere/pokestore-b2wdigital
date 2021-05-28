@@ -23,7 +23,9 @@ export class CartSidebarComponent {
         private analytics: AnalyticsService,
         private router: Router,
         private dialog: MatDialog
-    ) { }
+    ) {
+        this.onResize();
+     }
 
     @HostListener('window:resize', ['$event'])
     onResize(event?) {
@@ -59,6 +61,10 @@ export class CartSidebarComponent {
     get getTotalPrice(): number {
         this.totalPrice = this.cartService.getTotalPrice();
         return this.totalPrice;
+    }
+
+    public toggleCartVisibility() {
+        this.cartService.toggleCartVisibility();
     }
 
     public completePurchase(): void {
