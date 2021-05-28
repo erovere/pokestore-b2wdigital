@@ -194,18 +194,14 @@
                     </div>
                 </div>
             </ng-template>
-            <div class="search-not-found" *ngIf="(pokemonListFiltered.length === 0)">
-                <p>Nenhum pokemon encontrado com este termo de busca :(</p>
-            </div>
+            <ng-container *ngIf="pokemonList">
+                <div class="search-not-found" *ngIf="(pokemonListFiltered.length === 0)">
+                    <div class="content-wrapper">
+                        <p>Nenhum pokemon encontrado com este termo de busca :(</p>
+                        <img src="./assets/images/pikachu-search.jpg" alt="Nenhum pokemon encontrado com este termo de busca :(" title="Nenhum pokemon encontrado com este termo de busca :(">
+                    </div>
+                </div>
+            </ng-container>            
         </div>    
     </section>
-    
-    <!-- <aside class="cart" #cart>
-        <h2>Carrinho:</h2>
-        <ul>
-            <li>Charmander</li>
-            <li>Charmeleon</li>
-            <li>Charizard</li>
-        </ul>
-    </aside>     -->
 </div>

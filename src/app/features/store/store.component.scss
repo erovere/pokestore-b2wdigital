@@ -124,14 +124,18 @@ section.store{
         }
     }
 }
-// .cart-with-items{
-//     section.store{
-//         max-width: 830px;
-//     }
-//     aside.cart{
-//         display: flex!important;
-//     }
-// }
+.search-not-found{
+    p{
+        padding: 40px 0;
+        text-align: center;
+    }
+    img{
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+    }
+}
 aside.cart{
     padding: 10px;
     min-width: 270px;
@@ -174,6 +178,7 @@ aside.cart{
 @include for-tablet-landscape-down{
     .store-main-content{
         padding: 30px;
+        margin-top: 110px;
     }
     section.store{
         .product-container{
