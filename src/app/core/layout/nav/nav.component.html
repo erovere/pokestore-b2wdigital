@@ -31,7 +31,7 @@
             </ul>
         </nav>
         <div class="cart-nav">
-            <a class="cart-link" routerLink="cart" title="Carrinho de compras" gaEvent gaCategory="Menu" gaLabel="Abertura do carrinho de compras">  
+            <a class="cart-link" (click)="toggleCart()" title="Carrinho de compras" gaEvent gaCategory="Menu" gaLabel="Abertura do carrinho de compras">  
                 <i class="material-icons">shopping_cart</i>
                 <div class="cart-counter">
                     <span>{{getTotalItems}}</span>

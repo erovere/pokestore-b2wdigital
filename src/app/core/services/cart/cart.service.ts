@@ -7,11 +7,13 @@ import { Product } from '@app/core/models';
 })
 export class CartService {
     items: Product[] = [];
+    sidebarCartIsOpen: boolean;
 
     constructor(
         private utilService: UtilService
     ) { 
         this.items = this.utilService.getCart() || [];
+        this.sidebarCartIsOpen = false;
     }
 
     addToCart(product: Product) {
@@ -32,6 +34,14 @@ export class CartService {
 
     getItems() {
         return this.items;
+    }
+
+    toggleCartVisibility() {
+        this.sidebarCartIsOpen = !this.sidebarCartIsOpen;
+    }
+    
+    getCartVisibility() {
+        return this.sidebarCartIsOpen;
     }
 
     getTotalItems() {

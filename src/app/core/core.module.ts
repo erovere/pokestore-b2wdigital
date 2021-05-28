@@ -4,10 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './layout/nav/nav.component';
+import { CartSidebarComponent } from './layout/cart-sidebar/cart-sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [MainLayoutComponent, NavComponent],
+  declarations: [MainLayoutComponent, NavComponent, CartSidebarComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

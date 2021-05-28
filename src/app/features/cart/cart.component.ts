@@ -11,20 +11,16 @@ import { PurchaseSuccessComponent } from '@app/shared/components/dialogs/purchas
     templateUrl: './cart.component.html',
     styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
     items = this.cartService.getItems();
-    totalPrice  = this.cartService.getTotalPrice();
+    totalPrice  = this.cartService.getTotalPrice();    
 
     constructor(
         private cartService: CartService,
         private location: Location,
         private dialog: MatDialog,
         private analytics: AnalyticsService
-    ) { }
-
-    ngOnInit(): void {
-        // console.log(">> Itens no carrinho: ", this.items);
-    }
+    ) {}
 
     public handleBack = () => this.location.back();
 
@@ -54,7 +50,7 @@ export class CartComponent implements OnInit {
             data: {
                 items: this.items,
                 totalPrice: this.getTotalPrice,
-                cashback: (((100 / 10) * this.getTotalPrice) / 100)
+                cashback: (((100 / 5) * this.getTotalPrice) / 100)
             }
         });
 
