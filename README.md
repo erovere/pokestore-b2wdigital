@@ -90,7 +90,7 @@ As dependências do projeto estão listadas no arquivo package.json e precisam s
 ## Desafio solicitado
 
 - [x] Catálogo de produtos
-- [ ] Carrinho lateral
+- [x] Carrinho lateral
 - [x] Resumo do carrinho
 - [x] 05 lojas com estilos e tipos diferentes de Pokémon
 - [x] Barra de busca para filtrar os Pokémon
@@ -104,7 +104,7 @@ As dependências do projeto estão listadas no arquivo package.json e precisam s
 - [ ] Loja ser acessível para pessoas que utilizaram leitores de tela.
 - [ ] Testes E2E/UI automatizados parata be garantir que suas funcionalidades estão funcionando corretamente.
 - [x] Loja ser um PWA completo com aviso de AHS.
-- [ ] Ter nota 100 no lighthouse. (Estamos com nota **97** em Performance, **92** em Acessibilidade, **93** em melhores práticas e **75** em SEO. Iremos melhorar isso!)
+- [ ] Ter nota 100 no lighthouse. (Atualmente estamos com nota **97** em Performance, **92** em Acessibilidade, **93** em melhores práticas e **75** em SEO. Iremos melhorar isso!)
 - [x] Uilizar CI/CD para deploy das lojas.
 
 ## Extras
@@ -128,6 +128,7 @@ As dependências do projeto estão listadas no arquivo package.json e precisam s
 - [x] Gestão de features por tenant. Possibilidade de adicionar e/ou remover uma determinada feature para um cliente em específico (uma loja de um tipo de Pokémon, por exemplo, não ter determinada funcionalidade).
 - [x] Facilidade de implantação de novos tenants (criar novas lojas de tipos de Pokémon a partir de passos simples).
 - [x] Animações com CSS/Keyframes (Pokebola do menu e Pokebola de Pokémon capturado na modal de sucesso do carrinho).
+- [x] Arquitetura de carrinho diferente no desktop e mobile para otimizar a experiência dos usuários em ambas plataformas.
 
 
 ## Backlog de melhorias
