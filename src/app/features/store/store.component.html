@@ -9,7 +9,7 @@
             <div class="product-container" *ngIf="pokemonList; else loadingPokemons">
                 <div class="product-card" *ngFor="let pokemon of pokemonListFiltered; let i = index">
                     <div class="product-image" [routerLink]="['/pokemon/details/', getPokemonIdFromURL(pokemon.pokemon.url)]" gaEvent gaCategory="Loja" gaLabel="Visualizar detalhes do pokemon {{pokemon.pokemon.name}}">
-                        <img loading="lazy" [src]='"https://pokeres.bastionbot.org/images/pokemon/" + getPokemonIdFromURL(pokemon.pokemon.url) + ".png"' alt="Imagem do pokemon {{pokemon.pokemon.name}}">
+                        <img loading="lazy" [src]='"https://cdn.traction.one/pokedex/pokemon/" + getPokemonIdFromURL(pokemon.pokemon.url) + ".png"' alt="Imagem do pokemon {{pokemon.pokemon.name}}">
                     </div>
                     <div class="product-info">
                         <strong>{{pokemon.pokemon.name | titlecase }}</strong>
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <button *ngIf="(pokemonListFiltered.length > 0) && (maxRecordsToShow > recordsRendered) && (filterParameter.length === 0)" type="button" class="btn btn--primary btn-show-more-records" (click)="mountPokemonsToStore(12)" gaEvent gaCategory="Loja" gaLabel="Carregar mais itens da loja">Mostrar mais</button>
-            
+
             <ng-template #loadingPokemons>
                 <div class="loading-grid">
                     <div>
@@ -201,7 +201,7 @@
                         <img src="./assets/images/pikachu-search.jpg" alt="Nenhum pokemon encontrado com este termo de busca :(" title="Nenhum pokemon encontrado com este termo de busca :(">
                     </div>
                 </div>
-            </ng-container>            
-        </div>    
+            </ng-container>
+        </div>
     </section>
 </div>

@@ -3,45 +3,45 @@
         <button type="button" class="btn btn--back" (click)="handleBack()">
             <mat-icon>arrow_back</mat-icon>
             <span>Voltar</span>
-        </button>    
+        </button>
     </div>
     <section class="pokemon-details">
         <div class="pokemon-image">
-            <img [src]='"https://pokeres.bastionbot.org/images/pokemon/" + pokemonId + ".png"' alt="Imagem do pokemon {{pokemonDetails.name}}">
+            <img [src]='"https://cdn.traction.one/pokedex/pokemon/" + pokemonId + ".png"' alt="Imagem do pokemon {{pokemonDetails.name}}">
         </div>
         <div class="pokemon-information">
             <h2>{{pokemonDetails.name | titlecase}}</h2>
             <div class="pokemon-data">
                 <h3><u>Ficha técnica:</u></h3>
                 <ul>
-                    <li>                        
+                    <li>
                         <p><strong>Nome:</strong> {{pokemonDetails.name | titlecase}}</p>
                     </li>
-                    <li>                        
-                        <p><strong>Valor: </strong> 
+                    <li>
+                        <p><strong>Valor: </strong>
                             {{pokemonDetails.id}} <img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda"> <span>Poke moedas</span>
                         </p>
                     </li>
-                    <li>                        
+                    <li>
                         <p><strong>Tipo:</strong> {{getPokemonTypes}}</p>
                     </li>
-                    <li>                        
+                    <li>
                         <p><strong>Altura e peso:</strong> {{pokemonDetails.height / 10}}m / {{pokemonDetails.weight / 10}}kg </p>
                     </li>
-                    <li>                        
+                    <li>
                         <p><strong>Ataques:</strong> {{getPokemonMoves}}</p>
                     </li>
-                    <li>                        
+                    <li>
                         <p><strong>Habilidades:</strong> {{getPokemonAbility}}</p>
                     </li>
-                    <li>                        
+                    <li>
                         <p><strong>Representação em jogos eletrônicos:</strong></p>
                         <img [src]='getPokemonSprites' alt="Imagem do pokemon {{pokemonDetails.name}}">
                     </li>
-                </ul>                
-            </div>            
+                </ul>
+            </div>
             <button type="button" class="btn btn--primary btn-add-to-cart" (click)="addToCart(pokemonDetails)" gaEvent gaCategory="Detalhamento" gaLabel="Pokemon {{pokemonDetails.name}} adicionado ao carrinho">Adicionar ao carrinho</button>
-        </div>    
+        </div>
     </section>
 </div>
 <div class="loading" *ngIf="loading">

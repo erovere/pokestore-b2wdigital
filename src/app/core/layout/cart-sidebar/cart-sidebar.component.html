@@ -3,7 +3,7 @@
 
     <div class="cart-content">
         <div class="cart-item" *ngFor="let item of items">
-            <img class="item-image" [src]='"https://pokeres.bastionbot.org/images/pokemon/" + item.id + ".png"' alt="Imagem do pokemon {{item.name}}"> 
+            <img class="item-image" [src]='"https://cdn.traction.one/pokedex/pokemon/" + item.id + ".png"' alt="Imagem do pokemon {{item.name}}">
             <p class="cart-item-description">{{ item.name | titlecase }} <span>(x{{ item.amount }})</span></p>
             <div class="cart-item-price">
                 <img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda">
@@ -19,7 +19,7 @@
             {{getTotalItems}} Pokémons adicionados.
         </div>
         <div class="cart-totals">
-            <p class="cart-total-title">Total:</p>                                 
+            <p class="cart-total-title">Total:</p>
             <p>
                 <img class="pokecoin" src="./assets/images/pokecoin.png" alt="Pokemoeda">
                 <span class="total-price">{{getTotalPrice}}</span>
@@ -29,4 +29,4 @@
 
         <button type="button" class="btn btn--primary btn--complete-purchase" (click)="completePurchase()"><span>Finalizar compra</span></button>
     </div>
-</aside>    
+</aside>
